@@ -1,0 +1,78 @@
+@row-height: 35px;
+
+.toolbar-container {
+  height: @row-height;
+  line-height: @row-height;
+  //  margin-left: 20px;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+  //electron 里面需要放开 下面的两个
+  //background-color: var(--menu-background);
+  //border-top: 1px solid var(--kt-badge-border);
+  .toolbar-item {
+    margin-right: 10px;
+  }
+
+  .toolbar-item-box {
+    height: @row-height;
+    padding: 6px 5px;
+  }
+
+  .toolbar-item-button {
+    height: @row-height;
+    //padding-top: 2px ;
+  }
+
+  .toolbar-select {
+    text-align: left;
+  }
+
+  .toolbar-icon {
+    height: @row-height;
+    padding: 1px 5px;
+    margin-right: 6px;
+  }
+
+  .toolbar-left {
+    height: @row-height;
+    //width: 1px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-left: 8px;
+    //border: 1px solid blue;
+  }
+
+  .toolbar-center {
+    height: @row-height;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .toolbar-right {
+    height: @row-height;
+    width: 100px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    //border:1px solid blue;
+    .head-portrait {
+      display: inline-block;
+      height: 22px;
+      width: 22px;
+      background-image: url(./mountain.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+  }
+}

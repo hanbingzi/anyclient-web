@@ -1,0 +1,356 @@
+@border-color: var(--editor-lineHighlightBorder); //#444444; //#2d2d2d;//#454545;//#282828;#2d2d2d
+@cell-height:24px;
+@cell-line-height:22px;
+
+.table-editor-container {
+  outline: none;
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  .table-content {
+    position: relative;
+
+    .drag-line {
+      width: 2px;
+      background-color: var(--kt-primaryButton-background);
+      position: absolute;
+      z-index: 9;
+    }
+  }
+
+  .table-header-container {
+    overflow: hidden;
+    //height: 22px;//设置高度会导致filter无法展示
+  }
+
+  .table-body-container {
+    box-sizing: border-box;
+    position: relative;
+    outline: none;
+  }
+
+  .data-grid-container {
+    //此容器的宽度比正常宽30，用于预留拖拽table加宽的空间
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .row-selected {
+    //transition: none;
+    //box-shadow: inset 0 -100px 0 rgba(33, 133, 208, 0.15);
+    background-color: var(--list-activeSelectionBackground) !important; //#094771
+    //z-index: 10;
+  }
+
+  .row-add {
+    background-color: var(--editor-findRangeHighlightBackground); //#094771;// rgba(58, 61, 65, 0.4);//#75beff;// !important;(--editor-findRangeHighlightBackground)
+  }
+
+  .row-data {
+    display: flex;
+    flex-direction: row;
+
+    .cell {
+      //max-width: 500px;
+      box-sizing: border-box;
+      user-select: none;
+      cursor: cell;
+      //background-color: unset;
+      //transition: background-color 500ms ease;
+      vertical-align: middle;
+      text-align: right;
+      padding: 0;
+      vertical-align: bottom;
+      white-space: nowrap;
+      //overflow: hidden;
+      //font-weight: lighter; //调试使用，以后去掉
+      position: relative;
+
+      &.selected {
+        //border: 1px double rgb(33, 133, 208);
+        //transition: none;
+        //box-shadow: inset 0 -100px 0 rgba(33, 133, 208, 0.15);
+        //background-color: var(--list-focusOutline); // var(--kt-tree-activeSelectionBackground);
+
+        outline: 1px solid var(--list-focusOutline);
+        outline-offset: -1px;
+        color: var(--kt-tree-activeSelectionForeground) !important;
+        background: var(--kt-tree-activeSelectionBackground);
+      }
+
+      &.modified {
+        //border: 1px double rgb(33, 133, 208);
+        //background-color:var(--editor-findRangeHighlightBackground);
+        box-shadow: inset 0 -100px 0 rgba(33, 133, 208, 0.15);
+        //transition: background-color 0ms ease;
+      }
+
+      &.error {
+        background: var(--inputValidation-errorBackground);
+      }
+
+      &.read-only {
+        background-color: var(--sideBar-background); //var(--list-inactiveSelectionBackground);// #37373d;
+        text-align: center;
+      }
+
+      &.cell-title {
+        height: @cell-height;
+        line-height:@cell-line-height;
+        border-top: 1px solid @border-color;
+        border-right: 1px solid @border-color;
+        border-bottom: 1px solid @border-color;
+        text-overflow: ellipsis;
+        overflow: visible !important;
+        font-weight: 500;
+        cursor: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        &:hover {
+          .cell-sort-icon {
+            visibility: visible;
+            // background-color: greenyellow;
+          }
+        }
+
+        .cell-header-icon {
+          //position: absolute;
+          //width: 12px;
+          height: 20px;
+          line-height: 20px;
+          margin-right: 4px;
+          padding-top: 4px;
+
+          svg {
+            width: 14px;
+            height: 14px;
+          }
+        }
+
+        .cell-header-font {
+          //position: absolute;
+          height: @cell-line-height;
+          margin-right: 6px;
+
+          svg {
+            // margin: 0px;
+            width: 10px;
+            height: 10px;
+          }
+        }
+
+        .cell-sort-icon {
+          position: absolute;
+          width: 12px;
+          height: @cell-height;
+          // font-size: 10px;
+          bottom: 0px;
+          right: 5px;
+          cursor: pointer;
+          // vertical-align: middle;
+          //text-align: center;
+          padding-top: 4px;
+          visibility: hidden;
+          color: var(--kt-disableForeground); //禁用颜色
+
+          &:hover {
+            color: var(--kt-tree-hoverForeground);
+          }
+
+          &.sort-icon-show {
+            visibility: visible;
+          }
+
+          &-up,
+          &-down {
+            height: 10px;
+            width: 10px;
+            display: block;
+            padding: 0px;
+            overflow: hidden;
+            line-height: 10px;
+
+            svg {
+              // margin: 0px;
+              width: 10px;
+              height: 10px;
+            }
+
+            &.on-sort {
+              color: var(--inputOption-activeBorder); //var(--kt-primaryButton-background);
+            }
+          }
+
+          &-down {
+            margin-top: -3px;
+          }
+        }
+      }
+
+      &.cell-div {
+        height: @cell-height;
+        line-height: @cell-height;
+        border-right: 1px solid @border-color;
+        border-bottom: 1px solid @border-color;
+      }
+
+      &.cell-filter {
+        display: flex;
+        flex-direction: row;
+
+        &:hover {
+          border: 1px solid var(--kt-primaryButton-background);
+        }
+      }
+
+      &.row-handle {
+        width: 40px;
+        border-left: 1px solid @border-color;
+        border-right: 1px solid @border-color;
+        border-bottom: 1px solid @border-color;
+        font-weight: lighter;
+
+        &-selected {
+          background-color: var(--kt-tree-activeSelectionBackground);
+        }
+      }
+
+      &.cell-fixed-left {
+        //&-left,
+        //&-right {
+        z-index: 10;
+        position: sticky;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          display: block;
+          z-index: -1;
+        }
+      }
+
+      .value-viewer {
+        padding: 0px 5px;
+        //width: 100%;
+
+        height: 21px;
+        display: block;
+        line-height: 21px;
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &.null-viewer {
+          color: var(--kt-disableForeground);
+        }
+
+        &.num-viewer {
+          color: #b5cea8
+        }
+
+        &.boolean-viewer {
+          color: #ce9178
+        }
+
+        &.time-viewer {
+          color: #7ecde9;
+        }
+
+        .value-mark {
+          padding: 0;
+          color: var(--editorInfo-foreground); // #167cdb; // --kt-primaryButton-background-color
+        }
+      }
+
+      .data-editor {
+        outline: none !important;
+        border-top: 2px solid var(--kt-primaryButton-background);
+        border-left: 2px solid var(--kt-primaryButton-background);
+        border-bottom: 1px solid var(--kt-primaryButton-background);
+        border-right: 1px solid var(--kt-primaryButton-background);
+        text-align: right;
+        width: 100%; //calc(100% - 6px);
+        height: 21px;
+        //background-color: none;
+        display: block;
+        box-sizing: border-box;
+        padding: 0px 0px;
+        background-color: unset;
+      }
+
+      .filter-select {
+        outline: none !important;
+        border: unset !important;
+        height: @cell-height;
+        box-sizing: border-box;
+        //background-color: unset;
+        //border-color: transparent !important;
+
+        & > p {
+          padding-left: 8px;
+          padding-right: 8px;
+          text-align: center;
+          border: unset; //!important;
+
+          &:hover {
+            border-color: transparent; // !important;
+          }
+        }
+
+        & > div > div > span {
+          // padding-left: 2px !important;;
+          // padding-right: 2px !important;
+          text-align: center; //!important;
+        }
+      }
+
+      .filter-editor {
+        outline: none; //!important;
+        border: none;
+        padding-right: 5px;
+        text-align: right;
+        width: calc(100% - 65px);
+        //width: 100% ;
+        height: @cell-height;
+        display: block;
+        box-sizing: border-box;
+        background-color: unset;
+      }
+
+
+      .edit-viewer {
+        width: 100%;
+        height: 21px;
+        text-align: center;
+        box-sizing: border-box;
+      }
+    }
+
+    .row-empty {
+      height: @cell-height;
+      box-sizing: border-box;
+      border-right: 1px solid @border-color;
+      border-bottom: 1px solid @border-color;
+      text-align: center;
+    }
+  }
+
+  .row-data-hover {
+    &:hover {
+      color: var(--kt-tree-hoverForeground);
+      background-color: var(--kt-tree-hoverBackground);
+    }
+  }
+}

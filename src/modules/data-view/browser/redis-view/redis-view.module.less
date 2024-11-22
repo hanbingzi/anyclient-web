@@ -1,0 +1,106 @@
+@border-color: var(--editor-lineHighlightBorder);
+@border-color-height: var(--kt-editorBreadcrumb-borderDown);
+@background: var(--sideBar-background);
+@header-height: 30px;
+@header-line-height: 28px;
+
+.main-container {
+  outline: none;
+  //color: white;
+  //font-size: 14px;
+  box-sizing: border-box;
+
+  .header-container {
+    height: @header-height;
+    //border-bottom: 1px solid @border-color;
+    margin-top: 6px;
+    padding-left: 6px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    //border-bottom:1px solid #1e1e1e;
+
+    input[type='number']::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .header-group {
+      height: @header-height;
+      //line-height: 24px;
+      border: 1px solid @border-color-height;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+
+      //&:hover {
+      //  border: 1px solid cornflowerblue;
+      //}
+
+      .group-item {
+        //input {
+        //  height: 24px;
+        //  line-height: 24px;
+        //  width: 100%;
+        //  // background-color: #5bc0de;
+        //}
+      }
+
+      .group-title {
+        font-size: 16px;
+        padding-left: 10px;
+        padding-right: 20px;
+        line-height: @header-line-height;
+        background-color: @background;
+      }
+
+      .option {
+        width: 58px;
+        display: flex;
+        flex-direction: row;
+
+        .cache-icon {
+          margin-left: 10px;
+          margin-top: 6px;
+        }
+      }
+    }
+
+    .key-container {
+      width: 40%;
+      max-width: 400px;
+
+      .key-input {
+        flex-grow: 1;
+        min-width: 150px;
+        //max-width: 500px;
+      }
+    }
+
+    .ttl-container {
+      width: 30%;
+      max-width: 320px;
+      margin-left: 30px;
+
+      .ttl-input {
+        flex-grow: 1;
+        min-width: 60px;
+        // max-width: 120px;
+      }
+    }
+
+    .key-opt-container {
+      border: none;
+      margin-left: 20px;
+      margin-right: 10px;
+      padding-top: 4px;
+      line-height: @header-line-height;
+
+      .right-button {
+        margin-left: 14px;
+      }
+    }
+  }
+}

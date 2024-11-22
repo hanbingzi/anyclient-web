@@ -1,0 +1,38 @@
+.error-toast {
+  position: absolute;
+  background-color: var(--editorError-foreground);
+  top: 10px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  z-index: 11;
+  animation: fadeIn 0.3s, fadeOut 1s 2.7s;
+}
+
+.center-toast {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fixed-toast {
+  left: 5px
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

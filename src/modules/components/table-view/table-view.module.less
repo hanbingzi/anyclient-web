@@ -1,0 +1,294 @@
+@border-color: var(--editor-lineHighlightBorder);
+//--editor-lineHighlightBorder ##282828 --最开始的边框
+//--editorHoverWidget-border #454545
+//--editorGroup-border #444444
+//--inputValidation-infoBorder #007acc
+// --settings-checkboxBorder #3c3c3c
+// --tab-border #252526
+//--editor-snippetFinalTabstopHighlightBorder #525252
+.table-view-container {
+  outline: none;
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  .table-view-content {
+    position: relative;
+
+    .drag-line {
+      width: 2px;
+      background-color: var(--kt-primaryButton-background);
+      position: absolute;
+      z-index: 9;
+    }
+  }
+
+  .table-view-header-container {
+    overflow: hidden;
+    //height: 22px;//设置高度会导致filter无法展示
+  }
+
+  .table-view-body-container {
+    box-sizing: border-box;
+    position: relative;
+    outline: none;
+  }
+
+  .table-view-detail-container {
+    position: relative;
+    box-sizing: border-box;
+    border: 2px solid @border-color;
+
+    .click-cell-detail {
+      width: 100%;
+      height: 100%;
+      outline: none;
+      border: none;
+      background-color: transparent;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .data-grid-container {
+    //此容器的宽度比正常宽30，用于预留拖拽table加宽的空间
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .row-selected {
+    background-color: var(--list-activeSelectionBackground) !important; //#094771
+  }
+
+  .row-data {
+    display: flex;
+    flex-direction: row;
+
+    .cell {
+      //max-width: 500px;
+      box-sizing: border-box;
+      user-select: none;
+      //cursor: cell;
+      vertical-align: middle;
+      text-align: center;
+      padding: 0;
+      //vertical-align: bottom;
+      white-space: nowrap;
+      position: relative;
+
+      &.selected {
+        outline: 1px solid var(--list-focusOutline);
+        outline-offset: -1px;
+        color: var(--kt-tree-activeSelectionForeground) !important;
+        background: var(--kt-tree-activeSelectionBackground);
+      }
+
+      &.read-only {
+        background-color: var(--sideBar-background); //var(--list-inactiveSelectionBackground);// #37373d;
+        text-align: center;
+      }
+
+      &.cell-title {
+        height: 22px;
+        line-height: 20px;
+        border-top: 1px solid @border-color;
+        border-right: 1px solid @border-color;
+        border-bottom: 1px solid @border-color;
+        overflow: visible !important;
+        font-weight: 500;
+        cursor: unset;
+
+        &:hover {
+          .cell-sort-icon {
+            visibility: visible;
+            // background-color: greenyellow;
+          }
+        }
+
+        .cell-sort-icon {
+          position: absolute;
+          width: 12px;
+          height: 22px;
+          // font-size: 10px;
+          bottom: 0px;
+          right: 3px;
+          cursor: pointer;
+          // vertical-align: middle;
+          //text-align: center;
+          padding-top: 4px;
+          visibility: hidden;
+          color: var(--kt-disableForeground); //禁用颜色
+
+          &:hover {
+            color: var(--kt-tree-hoverForeground);
+          }
+
+          &.sort-icon-show {
+            visibility: visible;
+          }
+
+          &-up,
+          &-down {
+            height: 10px;
+            width: 10px;
+            display: block;
+            padding: 0px;
+            overflow: hidden;
+            line-height: 10px;
+
+            svg {
+              // margin: 0px;
+              width: 10px;
+              height: 10px;
+            }
+
+            &.on-sort {
+              color: var(--kt-primaryButton-background);
+            }
+          }
+
+          &-down {
+            margin-top: -3px;
+          }
+        }
+      }
+
+      &.cell-div {
+        height: 22px;
+        line-height: 22px;
+        border-right: 1px solid @border-color;
+        border-bottom: 1px solid @border-color;
+      }
+
+      &.cell-filter {
+        display: flex;
+        flex-direction: row;
+
+        &:hover {
+          border: 1px solid var(--kt-primaryButton-background);
+        }
+      }
+
+      &.row-handle {
+        width: 40px;
+        border-left: 1px solid @border-color;
+        border-right: 1px solid @border-color;
+        border-bottom: 1px solid @border-color;
+        font-weight: lighter;
+
+        &-selected {
+          background-color: var(--kt-tree-activeSelectionBackground);
+        }
+      }
+
+      &.cell-fixed-left {
+        //&-left,
+        //&-right {
+        z-index: 10;
+        position: sticky;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          display: block;
+          z-index: -1;
+        }
+      }
+
+      .value-viewer {
+        padding: 0px 5px;
+        //width: 100%;
+
+        height: 21px;
+        display: block;
+        line-height: 21px;
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        .value-mark {
+          padding: 0;
+          color: var(--kt-primaryButton-background); // #167cdb; // --kt-primaryButton-background-color
+        }
+      }
+
+      .data-editor {
+        outline: none !important;
+        border-top: 2px solid var(--kt-primaryButton-background);
+        border-left: 2px solid var(--kt-primaryButton-background);
+        border-bottom: 1px solid var(--kt-primaryButton-background);
+        border-right: 1px solid var(--kt-primaryButton-background);
+        text-align: right;
+        width: 100%; //calc(100% - 6px);
+        height: 21px;
+        //background-color: none;
+        display: block;
+        box-sizing: border-box;
+        padding: 0px 0px;
+        background-color: unset;
+      }
+
+      .filter-select {
+        outline: none !important;
+        border: unset;
+        height: 22px;
+        box-sizing: border-box;
+        background-color: unset;
+
+        & > p {
+          padding-left: 2px;
+          padding-right: 2px;
+          text-align: center;
+
+          &:hover {
+            border-color: transparent !important;
+          }
+        }
+
+        & > div > div > span {
+          padding-left: 2px !important;
+          padding-right: 2px !important;
+          text-align: center !important;
+        }
+      }
+
+      .filter-editor {
+        outline: none !important;
+        border: none;
+        padding-right: 5px;
+        text-align: right;
+        width: calc(100% - 65px);
+        height: 22px;
+        display: block;
+        box-sizing: border-box;
+        background-color: unset;
+      }
+    }
+
+    .row-empty {
+      height: 22px;
+      box-sizing: border-box;
+      border-right: 1px solid @border-color;
+      border-bottom: 1px solid @border-color;
+      text-align: center;
+    }
+  }
+
+  .row-data-hover {
+    &:hover {
+      color: var(--kt-tree-hoverForeground);
+      background-color: var(--kt-tree-hoverBackground);
+    }
+  }
+}

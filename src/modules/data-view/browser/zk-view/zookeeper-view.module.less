@@ -1,0 +1,58 @@
+@border-color: var(--editor-lineHighlightBorder);
+@border-color-height: var(--kt-editorBreadcrumb-borderDown);
+@background: var(--sideBar-background);
+@header-height: 36px;
+
+.main-container {
+  outline: none;
+  // color: white;
+  font-size: 14px;
+  box-sizing: border-box;
+
+  .header-container {
+    height: @header-height;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+
+    .header-row {
+      display: flex;
+      box-sizing: border-box;
+      margin-top: 6px;
+      //height: @header-row-height;
+      //line-height: @header-row-height;
+      //border: 1px solid red;
+      //background-color: #5f656b;
+
+      .header-column {
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+      }
+      .key-container {
+        margin-left: 6px;
+      }
+      .key-opt-container {
+        margin-left: 22px;
+        padding-top: 4px;
+        .right-button {
+          margin-left: 18px;
+        }
+      }
+    }
+  }
+  .info-row {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding-left: 6px;
+    height: 22px;
+    line-height: 22px;
+    .info-item {
+      margin-right: 18px;
+      height: 22px;
+      //background-color: #5f656b;
+    }
+  }
+}

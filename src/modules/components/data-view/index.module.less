@@ -1,0 +1,90 @@
+@default-height: 28px;
+@small-height: 22px;
+.input-view-container {
+  //margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .line {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 12px;
+
+    &-default {
+      height: @default-height;
+      line-height: @default-height;
+    }
+
+    &-small {
+      height: @small-height;
+      line-height: @small-height;
+    }
+
+    &-large {
+    }
+
+    .label-wrap {
+      text-align: left;
+      width: 25%;
+      padding-right: 20px;
+    }
+
+    .input-wrap {
+      width: 75%;
+    }
+  }
+}
+
+@input-background: var(--input-background);
+@editorWidget-border-color: var(--editorWidget-border);
+@label-line-height: 18px;
+.area-view-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  line-height: @label-line-height;
+
+  .label-wrap {
+    text-align: left;
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    //padding-right: 20px;
+    .label-icon {
+      box-sizing: border-box;
+      height: @label-line-height;
+      padding: 1px 4px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    .label-content {
+      // height: 18px;
+      padding: 0 4px;
+      word-wrap: break-word;
+    }
+  }
+
+  .area-wrap {
+    width: 75%;
+
+    .area-content {
+      outline: none;
+      border: none;
+      padding-left: 2px;
+      padding-right: 2px;
+      background-color: @input-background;
+      width: 100%;
+      height: 100%;
+
+      &-border {
+        border: 1px solid @editorWidget-border-color;
+      }
+    }
+  }
+}

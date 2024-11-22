@@ -1,0 +1,268 @@
+import React, {useEffect, useState} from 'react';
+import {ICacheKeyState, IBaseState} from '../../common/data-browser.types';
+import {ProgressBar} from '@opensumi/ide-core-browser/lib/components/progressbar';
+import cls from 'classnames';
+import styles from './cache-key-view.module.less';
+import {VscCheck} from 'react-icons/all';
+import {Button, Input, Select, Option, ValidateInput} from '@opensumi/ide-components';
+import {Icon} from '@opensumi/ide-core-browser/lib/components';
+import {getIcon, MonacoService, useInjectable} from '@opensumi/ide-core-browser';
+import {EditorCollectionService, ICodeEditor} from '@opensumi/ide-editor';
+import * as monaco from '@opensumi/monaco-editor-core/esm/vs/editor/editor.api';
+import type {
+  IStandaloneCodeEditor,
+} from '@opensumi/monaco-editor-core/esm/vs/editor/standalone/browser/standaloneCodeEditor';
+
+
+interface IKeyDetail {
+  keyName?: string;
+  keyType?: string;
+  ttl?: number;
+  keyValue?: any;
+}
+
+//let cachedEditor:  HTMLDivElement  ;
+
+export const CacheKeyView = (props: ICacheKeyState) => {
+  const {serverId, serverInfo, viewState, db, keyName: currentKeyName} = props;
+  const {width, height} = viewState;
+
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const [keyType, setKeyType] = useState<string>();
+  const [keyName, setKeyName] = useState<string>();
+  const [ttl, setTTL] = useState<string>();
+  const [keyValue, setKeyValue] = useState<any>();
+  const [keyDetail, setKeyDetail] = useState<IKeyDetail>();
+  const [display, setDisplay] = useState<string>('json')
+  const [models, setModels] = useState<{ [key: string]: { model: any, viewState?: any } }>({});
+
+  const [isShowKeySave, setIsShowKeySave] = useState<boolean>(false);
+  const [isShowKeyRevert, setIsShowKeyRevert] = useState<boolean>(false);
+  const [isShowTTLSave, setIsShowTTLSave] = useState<boolean>(false);
+  const [isShowTTLRevert, setIsShowTTLRevert] = useState<boolean>(false);
+
+  //const initialized = React.useRef(false)
+  const editor = React.useRef<ICodeEditor | null>(null);
+  const codeEditorRef = React.useRef<HTMLDivElement>(null);
+  const monacoService: MonacoService = useInjectable(MonacoService);
+  const editorCollectionService = useInjectable<EditorCollectionService>(EditorCollectionService);
+
+  useEffect(() => {
+    setKeyType('string');
+    setKeyName(currentKeyName);
+    setTTL('-1');
+    setKeyValue(
+      '"Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMzA5OTk5MDAwMSIsImFsZyI6IkhTMjU2IiwidHlwIjoiSldUIiwiaXNzIjoieWRobC1jbG91ZCIsImlhdCI6MTYyNDUyNTMwMiwiZXhwIjoxNjQwMDc3MzAyfQ.XuG4MOIp9So3pj6rsfxeQAb_k6-N-16tiPVxqE1QvM4"',
+    );
+  }, [keyDetail]);
+
+  useEffect(() => {
+
+    if (codeEditorRef.current) {
+      if (!editor.current) {
+        // initialized.current = true;
+        // if(cachedEditor){
+        //   codeEditorRef.current.appendChild(cachedEditor);
+        // }else{
+        console.log('我初始化了几次:cache-key-view-->')
+        // const container = document.createElement('div');
+        // codeEditorRef.current.appendChild(container);
+        // 初始化monacoEditor 这块要注意在React那边管控好生命周期 避免多次创建editor导致踩坑
+        const editor2 = editorCollectionService.createCodeEditor(codeEditorRef.current, {
+          value: ``,
+          language: '',
+          automaticLayout: true,
+          readOnly: false,
+          minimap: {
+            enabled: false,
+          },
+        });
+        const initModel = monaco.editor.createModel(`{"company":["google","facebook","microsoft"]}`, 'json')
+        editor2.monacoEditor.setModel(initModel);
+        setModels({...models, 'json': {model:initModel}})
+
+        editor.current = editor2;
+        setTimeout(() => {
+          editor2.layout();
+        }, 0);
+
+      }
+    }
+  }, [codeEditorRef.current]);
+
+  const handleKeyNameChange = (value: string) => {
+    // if (keyName !== value) {
+    //   if (!isShowKeyIcon) {
+    //     setIsShowKeyIcon(true)
+    //   }
+    // } else {
+    //   if (isShowKeyIcon) {
+    //     setIsShowKeyIcon(false)
+    //   }
+    // }
+  };
+
+  const handleTTLChange = (value: number) => {
+    console.log('ttlHandle-->', value);
+    // if (ttl !== value) {
+    //   if (!isShowTTLIcon) {
+    //     setIsShowTTLIcon(true)
+    //   }
+    // } else {
+    //   if (isShowTTLIcon) {
+    //     setIsShowTTLIcon(false)
+    //   }
+    // }
+  };
+
+  const handleDisplaySelect = (newValue: string) => {
+    //console.log('handleSelect-->:', newValue)
+    setDisplay(newValue);
+    //handleCommit(undefined, newValue);
+    if (editor.current) {
+      const editorState = editor.current?.monacoEditor.saveViewState();
+      //存储old viewState
+
+      if (models[newValue]) {
+        editor.current?.monacoEditor.setModel(models[newValue].model)
+
+        //editor.current?.monacoEditor.restoreViewState(models[newValue].viewState);
+      } else {
+        const model = monaco.editor.createModel(`{"company":["google","facebook","microsoft"]}`, newValue)
+        setModels({...models, [newValue]: {model}});
+        editor.current?.monacoEditor.setModel(model)
+      }
+    }
+    //设置不同的model
+  }
+
+  return isLoading ? (
+    <ProgressBar loading/>
+  ) : (
+    <div className={styles['main-container']} style={{width:width+'px',height:height}}>
+
+      <div className={styles['header-container']}>
+        <div className={cls(styles['header-group'], styles['key-container'])}>
+          <div className={cls(styles['group-item'], styles['group-title'])}>{keyType}</div>
+          <div className={cls(styles['group-item'], styles['key-input'])}>
+            <ValidateInput
+              type={'text'}
+              // validate={hasValidateError}
+              onBlur={() => {
+                // handleKeyNameChange(value);
+              }}
+              onValueChange={(value) => {
+                setKeyName(value);
+              }}
+              value={keyName}
+            />
+          </div>
+          <div className={cls(styles['group-item'], styles['option'])}>
+            <Icon
+              tooltip={'撤销'}
+              disabled={true}
+              icon={'rollback'}
+              //  onClick={loading || disabled ? noop : onClick}
+              className={cls('kt-clickable-icon', styles['cache-icon'])}
+            />
+
+            <Icon
+              tooltip={'保存'}
+              disabled={true}
+              icon={'check'}
+              //  onClick={loading || disabled ? noop : onClick}
+              className={cls('kt-clickable-icon', styles['cache-icon'])}
+            />
+          </div>
+        </div>
+        <div className={cls(styles['header-group'], styles['ttl-container'])}>
+          <div className={cls(styles['group-item'], styles['group-title'])}>TTL</div>
+          <div className={cls(styles['group-item'], styles['ttl-input'])}>
+            <ValidateInput
+              type={'number'}
+              onValueChange={(value) => {
+                setTTL(value);
+              }}
+              value={ttl}
+            />
+          </div>
+          <div className={cls(styles['group-item'], styles['option'])}>
+            <Icon
+              tooltip={'撤销'}
+              disabled={false}
+              icon={'rollback'}
+              //  onClick={loading || disabled ? noop : onClick}
+              className={cls('kt-clickable-icon', styles['cache-icon'])}
+            />
+            <Icon
+              tooltip={'保存'}
+              disabled={false}
+              icon={'check'}
+              //  onClick={loading || disabled ? noop : onClick}
+              className={cls('kt-clickable-icon', styles['cache-icon'])}
+            />
+          </div>
+        </div>
+        <div className={cls(styles['header-group'], styles['key-opt-container'])}>
+          <Button title={'删除key'} iconClass={getIcon('refresh')} size={'small'} type={'primary'}>
+            刷新
+          </Button>
+          <Button
+            title={'删除key'}
+            iconClass={getIcon('close1')}
+            size={'small'}
+            type={'danger'}
+            className={styles['right-button']}
+          >
+            删除
+          </Button>
+        </div>
+      </div>
+      <div className={styles['opt-container']} style={{width: width + 'px'}}>
+        <div className={styles['type-select-wrap']}>
+          <Select size={'small'} onChange={handleDisplaySelect} value={display}>
+            <Option value={'text'}>Text</Option>
+            <Option value={'json'}>Json</Option>
+            <Option value={'binary'}>Binary</Option>
+          </Select>
+        </div>
+        <div className={styles['opt-btn-wrap']}>
+          <div className={styles['opt-item']}>
+            <Icon
+              tooltip={'保存'}
+              disabled={false}
+              icon={'check'}
+              //  onClick={loading || disabled ? noop : onClick}
+              className={cls('kt-clickable-icon')}
+            />
+          </div>
+          <div className={styles['opt-item']}>
+            <Icon
+              tooltip={'刷新'}
+              disabled={false}
+              icon={'refresh'}
+              //  onClick={loading || disabled ? noop : onClick}
+              className={cls('kt-clickable-icon')}
+            />
+          </div>
+          <div className={styles['opt-item']}>
+            <Icon
+              tooltip={'撤销修改'}
+              disabled={false}
+              icon={'rollback'}
+              //  onClick={loading || disabled ? noop : onClick}
+              className={cls('kt-clickable-icon')}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className={styles['content-container']} ref={codeEditorRef} style={{width:width+'px',height:height-36-28+'px'}}>
+        {/* <div className={styles['content-text']}>*/}
+        {/*  {keyValue}*/}
+        {/* </div>*/}
+      </div>
+    </div>
+  );
+};

@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2019",
+    "baseUrl": "src",
+    "moduleResolution": "node",
+    "esModuleInterop": false,
+//    "strict": true,
+    "strictPropertyInitialization": false,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "downlevelIteration": true,
+    "noEmitOnError": false,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "strictFunctionTypes": false,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "esnext",
+      "webworker"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "./extensions/**/*",
+    "./workspace/**/*",
+    "./hosted/**/*",
+    "./dist-node/**/*",
+    "./dist/**/*",
+    "./node_modules/**/*"
+  ]
+}

@@ -1,0 +1,13 @@
+node_modules/
+lib/
+dist/
+dist-node/
+hosted/
+*.error.log
+yarn.log
+workspace/
+extensions/
+lib/**/*.d.ts
+src/**/*.d.ts
+*.d.ts.map
+.vscode

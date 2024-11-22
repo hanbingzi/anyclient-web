@@ -1,0 +1,35 @@
+key:
+Type, Pexpireat, Rename, Persist, Move,Dump,TTL,Expire,DEL,Pttl,Renamenx,Exists,Expireat,keys;
+
+string:
+Setnx,Getrange,Mset,Setex,Set,Get,Getbit,Setbit,Decr,Decrby,Strlen,Msetnx,Incrby,Incrbyfloat,Setrange,Psetex,Append,Getset,Mget,Incr;
+
+Hash
+Hmset,Hmget,Hset,Hgetall,Hget,Hexists,Hincrby,Hlen,Hdel,Hvals,Hincrbyfloat,Hkeys,Hsetnx;
+
+List:
+Lindex,Rpush,Lrange,Rpoplpush,Blpop,Brpop,Brpoplpush,Lrem,Llen,Ltrim,Lpop,Lpushx,Linsert,Rpop,Lset,Lpush,Rpushx
+
+Set:
+Sunion,Scard,Standmember,Smembers,Sinter,Srem,Smove,Sadd,Sismemer,Sdiffstore,Sdiff,Sscaan,Sinterstore,Sunionstore,Spop
+
+Sorted Set:
+Zrevrank,Zlexcount,Zunionstore,Zremrangebyrank,Zcard,Zrem,Zinterstore,Zrank,Zincrby,Zrangebyscore,Zrangebylex,Zscore,Zremrangebyscore,Zscan,Zrevrangebyscore,Zremrangebylex,Zrevrange,Zrange,Zcount,Zadd,
+
+Server
+Flushdb,Save,Showlog,Lastsave,Command,Slaveof,Flushall,Dbsize,Bgrewriteaof,Cluster Slots,Config Set,Shutdown,Sync ,Client Kill ,Role,Monitor,Command Getkeys,Client Getname,Config Resetstat,Command Count,Time,Info,Config rewrite,Client List,Client Setname,Bgsave
+
+脚本:
+Script kill,Script Load,Eval,Evalsha,Script Exists,Script Flush,
+
+事务 命令
+Exec, Watch,Discrad,Unwatch,Multi,
+
+HyperLogLog
+Pgmerge,Pfadd,Pfcount
+
+发布订阅
+Unsubscribe,Subscribe,Pubsub,Punsubscribe,Publish,Psubscribe,
+
+Geo
+Geohash,Geopos,Geodist,Georadius,Geoadd,Georadiusbymember

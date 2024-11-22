@@ -1,0 +1,64 @@
+@import '~@opensumi/ide-components/lib/style/mixins.less';
+
+.navigation_container {
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  height: 24px;
+  padding-left: 6px;
+  border-bottom: 1px solid var(--kt-editorBreadcrumb-borderDown);
+
+  &::-webkit-scrollbar {
+    display: none !important;
+    background: rgb(50, 50, 50);
+  }
+
+  .navigation_icon {
+    font-size: 12px;
+  }
+
+  .navigation-part {
+    color: var(--breadcrumb-foreground);
+    font-size: 12px;
+    padding: 0 4px;
+    position: relative;
+    line-height: 22px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    > span:first-child {
+      font-size: 14px;
+      vertical-align: middle;
+      padding-right: 5px;
+      padding-top: 4px;
+
+      &::before {
+        background-size: 12px;
+      }
+    }
+
+    &:hover {
+      color: var(--breadcrumb-focusForeground);
+    }
+
+    &:first-child {
+      &::before {
+        content: none;
+      }
+
+      &::after {
+        content: none;
+      }
+    }
+
+    .icon {
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+}

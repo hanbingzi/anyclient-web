@@ -1,0 +1,56 @@
+@border-color: var(--editor-lineHighlightBorder);
+@border-color-height: var(--kt-editorBreadcrumb-borderDown);
+@background: var(--sideBar-background);
+@header-height: 30px;
+@header-line-height: 28px;
+
+//input[type='number']::-webkit-inner-spin-button {
+//  -webkit-appearance: none;
+//  margin: 0;
+//}
+
+.input-container {
+  height: @header-height;
+  //line-height: 24px;
+  border: 1px solid @border-color-height;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  //width: 400px;
+
+  .group-item {
+  }
+
+  .group-title {
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 20px;
+    line-height: @header-line-height;
+    background-color: @background;
+  }
+  .group-input {
+    flex-grow: 1;
+  }
+
+  .option {
+    width: 58px;
+    display: flex;
+    flex-direction: row;
+
+    .cache-icon {
+      margin-left: 10px;
+      margin-top: 6px;
+    }
+  }
+}
+
+//.key-container {
+//  width: 40%;
+//
+//
+//  .key-input {
+//    flex-grow: 1;
+//    min-width: 150px;
+//    //max-width: 500px;
+//  }
+//}

@@ -1,0 +1,48 @@
+.icon-container {
+  position: relative;
+  padding: 3px;
+  //background-color: var(--kt-icon-foreground);
+  border-radius: 3px;
+  svg {
+    display: block;
+  }
+}
+
+.icon-large {
+  width: 28px;
+  height: 28px;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.icon-default {
+  width: 22px;
+  height: 22px;
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.icon-small {
+  width: 18px;
+  height: 18px;
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.icon-disabled {
+  svg path {
+    fill: var(--kt-icon-disableForeground);
+  }
+}
+.icon-active {
+  &:hover {
+    background-color: var(--kt-icon-hoverBackground);
+  }
+}

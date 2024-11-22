@@ -1,0 +1,86 @@
+.query-explorer-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .title-container {
+    //lineHeight: '35px';
+    width: 100%;
+    //flex: 1;
+    padding: 0 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+
+    .title-control-icon {
+      width: 20px;
+      height: 38px;
+      line-height: 38px;
+    }
+  }
+
+  .response-container {
+    width: 100%;
+    background-color: var(--editor-background);
+    //border :1px solid red;
+  }
+}
+
+.data-container-show {
+  width: 100%;
+  height: 100%;
+  display: block;
+  visibility: visible;
+}
+
+.data-container-hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.empty-component {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    user-select: none;
+  }
+
+  > span {
+    font-size: 20px;
+    opacity: 0.7;
+  }
+}
+
+.shortcutPanel {
+  border-collapse: separate;
+  border-spacing: 13px 10px;
+  user-select: none;
+
+  .shortcutRow {
+    display: table-row;
+    opacity: 0.7;
+    padding-top: 8px;
+    padding-right: 16px;
+
+    .label {
+      // width: 92px;
+      display: table-cell;
+      text-align: right;
+    }
+
+    .keybinding {
+      display: table-cell;
+      margin-left: 16px;
+      text-align: left;
+    }
+  }
+}

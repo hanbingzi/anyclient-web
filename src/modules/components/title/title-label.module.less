@@ -1,0 +1,38 @@
+.title-container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--kt-tab-borderDown);
+
+  .title-wrap {
+    border-bottom: 2px solid var(--kt-tab-activeBorder);
+    padding: 8px 0 8px 0;
+    line-height: 20px;
+
+    display: flex;
+    flex-direction: row;
+
+    &.min-title {
+      padding: 2px 4px 2px 4px;
+    }
+
+    &:hover {
+      color: var(--kt-tab-activeForeground);
+    }
+
+    .title-icon {
+      box-sizing: border-box;
+      height: 20px;
+      padding: 2px 4px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    .title-content {
+      height: 20px;
+      padding: 0 4px;
+    }
+  }
+}

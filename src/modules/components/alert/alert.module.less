@@ -1,0 +1,29 @@
+.alert-container {
+  display: block;
+  box-sizing: border-box;
+  height: 28px;
+  padding: 3px 6px;
+  line-height: 22px;
+  border-width: 1px;
+  border-style: solid;
+
+  &.alert-success {
+    //background-color: #64b436;
+    border-color: var(--kt-modalSuccessIcon-foreground);
+  }
+
+  &.alert-info {
+    background-color: var(--inputValidation-infoBackground);
+    border-color: var(--inputValidation-infoBorder);
+  }
+
+  &.alert-warning {
+    background-color: var(--inputValidation-warningBackground);
+    border-color: var(--inputValidation-warningBorder);
+  }
+
+  &.alert-error {
+    background-color: var(--inputValidation-errorBackground);
+    border-color: var(--inputValidation-errorBorder);
+  }
+}

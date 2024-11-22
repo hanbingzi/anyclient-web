@@ -1,0 +1,44 @@
+@default-height: 28px;
+@small-height: 22px;
+@large-height: 34px;
+.item-input-container {
+  width: 100%;
+  padding: 0;
+  //border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  .label-wrap {
+    width: 25%;
+
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    &-default {
+      height: @default-height;
+      line-height: @default-height;
+    }
+    &-small {
+      height: @default-height;
+      line-height: @default-height;
+    }
+
+    .required {
+      color: var(--errorForeground);
+    }
+  }
+
+  .input-wrap {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    //height: @height;
+    //.err-msg {
+    //  height: 18px;
+    //  line-height: 18px;
+    //  color: var(--errorForeground);
+    //}
+  }
+}
