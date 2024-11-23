@@ -1,0 +1,40 @@
+{
+  "name": "log",
+  "displayName": "Log (built-in)",
+  "description": "Provides syntax highlighting for files with .log extension.",
+  "version": "1.60.2",
+  "publisher": "vscode",
+  "license": "SEE LICENSE IN LICENSE-vscode.txt",
+  "engines": {
+    "vscode": "*"
+  },
+  "scripts": {},
+  "contributes": {
+    "languages": [
+      {
+        "id": "log",
+        "extensions": [
+          ".log",
+          "*.log.?"
+        ],
+        "aliases": [
+          "Log"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "log",
+        "scopeName": "text.log",
+        "path": "./syntaxes/log.tmLanguage.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eclipse-theia/vscode-builtin-extensions"
+  },
+  "keywords": [
+    "Built-in"
+  ]
+}

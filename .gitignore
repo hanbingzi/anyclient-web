@@ -6,7 +6,8 @@ hosted/
 *.error.log
 yarn.log
 workspace/
-extensions/
+#
+#extensions/
 lib/**/*.d.ts
 src/**/*.d.ts
 *.d.ts.map

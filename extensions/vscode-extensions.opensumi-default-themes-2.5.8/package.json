@@ -1,0 +1,40 @@
+{
+  "name": "opensumi-default-themes",
+  "displayName": "OpenSumi Default Themes",
+  "description": "The default OpenSumi themes",
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "opensumi",
+    "theme",
+    "themes"
+  ],
+  "version": "2.5.8",
+  "publisher": "opensumi",
+  "engines": {
+    "vscode": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opensumi/Default-Themes"
+  },
+  "icon": "icons/icon.png",
+  "contributes": {
+    "themes": [
+      {
+        "id": "opensumi-dark",
+        "label": "OpenSumi Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark/plus.json"
+      },
+      {
+        "id": "opensumi-light",
+        "label": "OpenSumi Light",
+        "uiTheme": "vs",
+        "path": "./themes/light/plus.json"
+      }
+    ]
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,30 @@
+{
+  "name": "vscode-theme-seti",
+  "private": true,
+  "version": "1.60.2",
+  "displayName": "Seti File Icon Theme (built-in)",
+  "description": "A file icon theme made out of the Seti UI file icons",
+  "publisher": "vscode",
+  "license": "SEE LICENSE IN LICENSE-vscode.txt",
+  "icon": "icons/seti-circular-128x128.png",
+  "scripts": {},
+  "engines": {
+    "vscode": "*"
+  },
+  "contributes": {
+    "iconThemes": [
+      {
+        "id": "vs-seti",
+        "label": "%themeLabel%",
+        "path": "./icons/vs-seti-icon-theme.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eclipse-theia/vscode-builtin-extensions"
+  },
+  "keywords": [
+    "Built-in"
+  ]
+}

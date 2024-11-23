@@ -1,0 +1,123 @@
+{
+  "name": "Redis",
+  "scopeName": "source.redis",
+  "patterns": [
+    {
+      "match": "(?i)^\\s*\\b(Type|Pexpireat|Rename|Persist|Move|Dump|TTL|Expire|DEL|Pttl|Renamenx|Exists|Expireat|keys Setnx|Getrange|Mset|Setex|Set|Get|Getbit|Setbit|Decr|Decrby|Strlen|Msetnx|Incrby|Incrbyfloat|Setrange|Psetex|Append|Getset|Mget|Incr|Hmset|Hmget|Hset|Hgetall|Hget|Hexists|Hincrby|Hlen|Hdel|Hvals|Hincrbyfloat|Hkeys|Hsetnx|Lindex|Rpush|Lrange|Rpoplpush|Blpop|Brpop|Brpoplpush|Lrem|Llen|Ltrim|Lpop|Lpushx|Linsert|Rpop|Lset|Lpush|Rpushx|Sunion|Scard|Standmember|Smembers|Sinter|Srem|Smove|Sadd|Sismemer|Sdiffstore|Sdiff|Sscaan|Sinterstore|Sunionstore|Spop|Zrevrank|Zlexcount|Zunionstore|Zremrangebyrank|Zcard|Zrem|Zinterstore|Zrank|Zincrby|Zrangebyscore|Zrangebylex|Zscore|Zremrangebyscore|Zscan|Zrevrangebyscore|Zremrangebylex|Zrevrange|Zrange|Zcount|Zadd|Flushdb|Save|Showlog|Lastsave|Command|Slaveof|Flushall|Dbsize|Bgrewriteaof|Cluster|Slots|Config|Shutdown|Sync|Client|Kill|Role|Monitor|Command|Getkeys|Getname|Resetstat|Command|Count|Time|Info|Config|rewrite|List|Setname|Bgsave|Script|kill|Load|Eval|Evalsha|Exists|Flush|Exec|Watch|Discrad|Unwatch|Multi|Pgmerge|Pfadd|Pfcount|Unsubscribe|Subscribe|Pubsub|Punsubscribe|Publish|Psubscribe|Geohash|Geopos|Geodist|Georadius|Geoadd|Georadiusbymember)\\b",
+      "name": "keyword.redis"
+    },
+    {
+      "include": "#value"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "begin": "/\\*\\*(?!/)",
+          "captures": {
+            "0": {
+              "name": "punctuation.definition.comment.redis"
+            }
+          },
+          "end": "\\*/",
+          "name": "comment.block.documentation.redis"
+        },
+        {
+          "begin": "/\\*",
+          "captures": {
+            "0": {
+              "name": "punctuation.definition.comment.redis"
+            }
+          },
+          "end": "\\*/",
+          "name": "comment.block.redis"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.comment.redis"
+            }
+          },
+          "match": "(//).*$\\n?",
+          "name": "comment.line.double-slash.js"
+        }
+      ]
+    },
+    "array": {
+      "begin": "\\[",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.array.begin.redis"
+        }
+      },
+      "end": "\\]",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.array.end.redis"
+        }
+      },
+      "name": "meta.structure.array.redis",
+      "patterns": [
+        {
+          "include": "#value"
+        },
+        {
+          "match": ",",
+          "name": "punctuation.separator.array.redis"
+        },
+        {
+          "match": "[^\\s\\]]",
+          "name": "invalid.illegal.expected-array-separator.redis"
+        }
+      ]
+    },
+    "constant": {
+      "match": "\\b(?:true|false|null)\\b",
+      "name": "constant.language.redis"
+    },
+    "string": {
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.redis"
+        }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.redis"
+        }
+      },
+      "name": "string.quoted.double.redis",
+      "patterns": [
+        {
+          "include": "#stringcontent"
+        }
+      ]
+    },
+    "number": {
+      "match": "(?x)        # turn on extended mode\r\n  -?        # an optional minus\r\n  (?:\r\n    0       # a zero\r\n    |       # ...or...\r\n    [1-9]   # a 1-9 character\r\n    \\d*     # followed by zero or more digits\r\n  )\r\n  (?:\r\n    (?:\r\n      \\.    # a period\r\n      \\d+   # followed by one or more digits\r\n    )?\r\n    (?:\r\n      [eE]  # an e character\r\n      [+-]? # followed by an option +/-\r\n      \\d+   # followed by one or more digits\r\n    )?      # make exponent optional\r\n  )?        # make decimal portion optional",
+      "name": "constant.numeric.redis"
+    },
+    "value": {
+      "patterns": [
+        {
+          "include": "#constant"
+        },
+        {
+          "include": "#string"
+        },
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#array"
+        },
+        {
+          "include": "#number"
+        }
+      ]
+    }
+  }
+}

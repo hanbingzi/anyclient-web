@@ -1,0 +1,9 @@
+{
+	"messages": [
+		"Select the page where you want to open the devtools"
+	],
+	"keys": [
+		"selectEdgeToolSession"
+	],
+	"filePath": "ui/edgeDevToolOpener"
+}

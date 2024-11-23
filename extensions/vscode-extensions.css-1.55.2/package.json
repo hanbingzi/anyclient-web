@@ -1,0 +1,47 @@
+{
+  "name": "css",
+  "displayName": "CSS Language Basics (built-in)",
+  "description": "Provides syntax highlighting and bracket matching for CSS, LESS and SCSS files.",
+  "version": "1.55.2",
+  "publisher": "vscode",
+  "license": "SEE LICENSE IN LICENSE-vscode.txt",
+  "engines": {
+    "vscode": "0.10.x"
+  },
+  "scripts": {},
+  "contributes": {
+    "languages": [
+      {
+        "id": "css",
+        "aliases": [
+          "CSS",
+          "css"
+        ],
+        "extensions": [
+          ".css"
+        ],
+        "mimetypes": [
+          "text/css"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "css",
+        "scopeName": "source.css",
+        "path": "./syntaxes/css.tmLanguage.json",
+        "tokenTypes": {
+          "meta.function.url string.quoted": "other"
+        }
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theia-ide/vscode-builtin-extensions"
+  },
+  "keywords": [
+    "Built-in"
+  ]
+}

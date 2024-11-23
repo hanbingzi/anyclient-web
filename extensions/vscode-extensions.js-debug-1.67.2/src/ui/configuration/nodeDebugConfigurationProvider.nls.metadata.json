@@ -1,0 +1,13 @@
+{
+	"messages": [
+		"JavaScript Debug Terminal",
+		"Run Script: {0}",
+		"Run Current File"
+	],
+	"keys": [
+		"debug.terminal.label",
+		"node.launch.script",
+		"node.launch.currentFile"
+	],
+	"filePath": "ui/configuration/nodeDebugConfigurationProvider"
+}

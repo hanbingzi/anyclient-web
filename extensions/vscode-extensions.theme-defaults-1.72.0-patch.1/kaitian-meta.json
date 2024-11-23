@@ -1,0 +1,22 @@
+{
+  "web-assets": [
+    "package.json",
+    "fileicons/images/root-folder-dark.svg",
+    "fileicons/images/root-folder-open-dark.svg",
+    "fileicons/images/folder-dark.svg",
+    "fileicons/images/folder-open-dark.svg",
+    "fileicons/images/document-dark.svg",
+    "fileicons/images/root-folder-light.svg",
+    "fileicons/images/root-folder-open-light.svg",
+    "fileicons/images/folder-light.svg",
+    "fileicons/images/folder-open-light.svg",
+    "fileicons/images/document-light.svg",
+    "fileicons/vs_minimal-icon-theme.json",
+    "themes/dark_plus.json",
+    "themes/light_plus.json",
+    "themes/dark_vs.json",
+    "themes/light_vs.json",
+    "themes/hc_black.json",
+    "themes/hc_light.json"
+  ]
+}

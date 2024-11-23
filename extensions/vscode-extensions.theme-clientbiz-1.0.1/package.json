@@ -1,0 +1,29 @@
+{
+  "name": "clientbiz-theme",
+  "displayName": "%displayName%",
+  "description": "%description%",
+  "categories": [
+    "Themes"
+  ],
+  "version": "1.0.1",
+  "publisher": "vscode",
+  "license": "MIT",
+  "engines": {
+    "vscode": "*",
+    "kaitian": "*"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "id": "clientbiz-dark",
+        "label": "%darkColorThemeLabel%",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark_vs.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/vscode.git"
+  }
+}

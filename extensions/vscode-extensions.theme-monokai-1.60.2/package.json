@@ -1,0 +1,29 @@
+{
+  "name": "theme-monokai",
+  "displayName": "Monokai Theme (built-in)",
+  "description": "Monokai theme for Visual Studio Code",
+  "version": "1.60.2",
+  "publisher": "vscode",
+  "license": "SEE LICENSE IN LICENSE-vscode.txt",
+  "engines": {
+    "vscode": "*"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "id": "Monokai",
+        "label": "%themeLabel%",
+        "uiTheme": "vs-dark",
+        "path": "./themes/monokai-color-theme.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eclipse-theia/vscode-builtin-extensions"
+  },
+  "keywords": [
+    "Built-in"
+  ],
+  "scripts": {}
+}

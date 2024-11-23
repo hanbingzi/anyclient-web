@@ -1,0 +1,32 @@
+{
+  "name": "git-ui",
+  "displayName": "Git UI (built-in)",
+  "description": "Git SCM UI Integration",
+  "publisher": "vscode",
+  "license": "SEE LICENSE IN LICENSE-vscode.txt",
+  "version": "1.55.2",
+  "engines": {
+    "vscode": "^1.5.0"
+  },
+  "extensionKind": [
+    "ui"
+  ],
+  "aiKey": "AIF-d9b70cd4-b9f9-4d70-929b-a071c400b217",
+  "enableProposedApi": true,
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:git.credential"
+  ],
+  "main": "./dist/main",
+  "icon": "resources/icons/git.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theia-ide/vscode-builtin-extensions"
+  },
+  "keywords": [
+    "Built-in"
+  ],
+  "scripts": {}
+}

@@ -1,0 +1,6 @@
+{
+  "web-assets": [
+    "package.json",
+    "themes/dark_vs.json"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+	"messages": [
+		"Yes",
+		"No",
+		"Never"
+	],
+	"keys": [
+		"yes",
+		"no",
+		"never"
+	],
+	"filePath": "ui/prettyPrint"
+}

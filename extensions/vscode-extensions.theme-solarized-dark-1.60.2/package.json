@@ -1,0 +1,29 @@
+{
+  "name": "theme-solarized-dark",
+  "displayName": "Solarized Dark Theme (built-in)",
+  "description": "Solarized dark theme for Visual Studio Code",
+  "version": "1.60.2",
+  "publisher": "vscode",
+  "license": "SEE LICENSE IN LICENSE-vscode.txt",
+  "engines": {
+    "vscode": "*"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "id": "Solarized Dark",
+        "label": "%themeLabel%",
+        "uiTheme": "vs-dark",
+        "path": "./themes/solarized-dark-color-theme.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eclipse-theia/vscode-builtin-extensions"
+  },
+  "keywords": [
+    "Built-in"
+  ],
+  "scripts": {}
+}

@@ -1,0 +1,48 @@
+{
+  "name": "java",
+  "displayName": "Java Language Basics (built-in)",
+  "description": "Provides snippets, syntax highlighting, bracket matching and folding in Java files.",
+  "version": "1.60.2",
+  "publisher": "vscode",
+  "license": "SEE LICENSE IN LICENSE-vscode.txt",
+  "engines": {
+    "vscode": "*"
+  },
+  "scripts": {},
+  "contributes": {
+    "languages": [
+      {
+        "id": "java",
+        "extensions": [
+          ".java",
+          ".jav"
+        ],
+        "aliases": [
+          "Java",
+          "java"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "java",
+        "scopeName": "source.java",
+        "path": "./syntaxes/java.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "java",
+        "path": "./snippets/java.code-snippets"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eclipse-theia/vscode-builtin-extensions"
+  },
+  "keywords": [
+    "Built-in"
+  ]
+}

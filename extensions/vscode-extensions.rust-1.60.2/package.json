@@ -1,0 +1,41 @@
+{
+  "name": "rust",
+  "displayName": "Rust Language Basics (built-in)",
+  "description": "Provides syntax highlighting and bracket matching in Rust files.",
+  "version": "1.60.2",
+  "publisher": "vscode",
+  "license": "SEE LICENSE IN LICENSE-vscode.txt",
+  "engines": {
+    "vscode": "*"
+  },
+  "scripts": {},
+  "contributes": {
+    "languages": [
+      {
+        "id": "rust",
+        "extensions": [
+          ".rs"
+        ],
+        "aliases": [
+          "Rust",
+          "rust"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "rust",
+        "path": "./syntaxes/rust.tmLanguage.json",
+        "scopeName": "source.rust"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eclipse-theia/vscode-builtin-extensions"
+  },
+  "keywords": [
+    "Built-in"
+  ]
+}
