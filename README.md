@@ -37,7 +37,7 @@ ClientBiz是一款开源的，支持WEB和客户端版本的，能够支持连�
     </div>
 </div>
 
-<div style="display: flex; justify-content: space-between;padding: 10px 20px">
+<div style="display: flex; flex-direction: row;justify-content: space-between;padding: 10px 20px">
     <div style="text-align: center;">
         <img src="./doc/icons/server/zookeeper.svg" width="50px" height="50px">
         <p>Zookeeper</p>
@@ -139,7 +139,7 @@ Open [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
 ## 最后
 
-注：作者全职开发此产品将近两年，已经穷的无米下锅，目前正在找工作，如果有Java方面的技术岗或管理岗，希望能邮箱联系作者
+注：作者断断续续的全职开发此产品已花费将近两年，都穷的无米下锅，目前正在找工作，如果有Java方面的技术岗或管理岗，希望能邮箱联系作者
 
 ## License
 
