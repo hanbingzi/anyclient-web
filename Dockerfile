@@ -13,7 +13,6 @@ RUN mkdir -p ${WORKSPACE_DIR}  &&\
 
 RUN yarn --ignore-scripts --network-timeout 1000000 && \
     yarn run build && \
-    yarn run download:extensions && \
     rm -rf ./node_modules
 
 FROM node:14 as app

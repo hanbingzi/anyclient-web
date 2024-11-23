@@ -6,7 +6,7 @@
     "url": "https://github.com/opensumi/ide-startup.git",
     "type": "https"
   },
-  "license": "MIT",
+  "license": "LGPL-3.0-or-later",
   "scripts": {
     "postinstall": "cross-env NODE_OPTIONS=--openssl-legacy-provider npm run compile:worker-host && npm run compile:ext-host",
     "download:extensions": "node scripts/download.js",

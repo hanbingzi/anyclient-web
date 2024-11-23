@@ -2,21 +2,24 @@
 
 [官网地址](https://www.clientbiz.cn)
 
+[ClientBiz IDE 版本请移步此处（源码地址）](./README-zh_CN.md)
+
 ClientBiz是一款开源的，支持WEB和客户端版本，能够连接各种类型的关系数据库、非关系型数据库、时序数据库、图数据库、消息队列、注册中心等数据服务的管理软件。
 
 ![perview](./doc/images/clientbiz-main.jpg)
 
-[ClientBiz IDE 版本请移步此处（源码地址）](./README-zh_CN.md)
+
 
 <h2 align="center">ClientBiz当前支持的客户端 </h2>
 
-|     ![mysql](./doc/icons/server/mysql.svg)     | ![postgresql](./doc/icons/server/postgre.svg) |     ![oracle](./doc/icons/server/oracle.svg)     | ![mariadb](./doc/icons/server/mariadb.svg) |   ![redis](./doc/icons/server/sqlserver.svg)   | ![redis](./doc/icons/server/redis.svg) |
-|:----------------------------------------------:|:---------------------------------------------:|:------------------------------------------------:|:------------------------------------------:|:----------------------------------------------:|:--------------------------------------:|
-|                     Mysql                      |                  Postgresql                   |                      Oracle                      |                  Mariadb                   |                   SqlServer                    |                 Redis                  |
-| ![zookeeper](./doc/icons/server/zookeeper.svg) |    ![kafka](./doc/icons/server/kafka.svg)     |         ![dm](./doc/icons/server/dm.svg)         |    ![tidb](./doc/icons/server/tidb.svg)    | ![oceanbase](./doc/icons/server/oceanbase.svg) |   ![db2](./doc/icons/server/db2.svg)   |
-|                   Zookeeper                    |                     Kafka                     |                        达梦                        |                    TiDB                    |                   oceanbase                    |                  DB2                   |
-|      ![etcd](./doc/icons/server/etcd.svg)      | ![TDEngine](./doc/icons/server/tdengine.svg)  | ![clickhouse](./doc/icons/server/clickhouse.svg) |  ![Presto](./doc/icons/server/presto.svg)  |     ![trino](./doc/icons/server/trino.svg)     |                                        |
-|                      Etcd                      |                   TDEngine                    |                    ClickHouse                    |                   Presto                   |                     Trino                      |                                        |
+|                        -                         |                       -                        |                        -                         |                     -                      |                       -                        |                   -                    |
+|:------------------------------------------------:|:----------------------------------------------:|:------------------------------------------------:|:------------------------------------------:|:----------------------------------------------:|:--------------------------------------:|
+|      ![mysql](./doc/icons/server/mysql.svg)      | ![postgresql](./doc/icons/server/postgre.svg)  |     ![oracle](./doc/icons/server/oracle.svg)     | ![mariadb](./doc/icons/server/mariadb.svg) |   ![redis](./doc/icons/server/sqlserver.svg)   | ![redis](./doc/icons/server/redis.svg) |
+|                      Mysql                       |                   Postgresql                   |                      Oracle                      |                  Mariadb                   |                   SqlServer                    |                 Redis                  |
+| ![zookeeper](./doc/icons/server/zookeeper.svg)   |     ![kafka](./doc/icons/server/kafka.svg)     |         ![dm](./doc/icons/server/dm.svg)         |    ![tidb](./doc/icons/server/tidb.svg)    | ![oceanbase](./doc/icons/server/oceanbase.svg) |   ![db2](./doc/icons/server/db2.svg)   |
+|                    Zookeeper                     |                     Kafka                      |                        达梦                        |                    TiDB                    |                   oceanbase                    |                  DB2                   |
+|       ![etcd](./doc/icons/server/etcd.svg)       |  ![TDEngine](./doc/icons/server/tdengine.svg)  | ![clickhouse](./doc/icons/server/clickhouse.svg) |  ![Presto](./doc/icons/server/presto.svg)  |     ![trino](./doc/icons/server/trino.svg)     |                                        |
+|                       Etcd                       |                    TDEngine                    |                    ClickHouse                    |                   Presto                   |                     Trino                      |                                        |
 
 ## 一：功能特点
 
@@ -185,15 +188,15 @@ ClientBiz是一款开源的，支持WEB和客户端版本，能够连接各种�
 ## 三：运行代码
 
 ```bash
-$ git clone git@github.com:opensumi/ide-startup.git
-$ cd ide-startup
+$ git clone https://github.com/hanbingzi/clientbiz-web.git
+$ cd clientbiz-web
 $ yarn
 $ yarn start
 ```
 
 Open [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
-## 请作者喝杯咖啡
+## 捐献作者
 
 开源创作不易，请多支持
 <div>
@@ -218,4 +221,4 @@ Open [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
 ## License
 
-GPL
+GPL-3.0
