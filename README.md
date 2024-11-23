@@ -6,96 +6,19 @@ ClientBiz是一款开源的，支持WEB和客户端版本的，能够支持连�
 
 ![perview](./doc/images/clientbiz-main.jpg)
 
-[ClientBiz IDE 源码地址](./README-zh_CN.md)
+[ClientBiz IDE 版本请移步此处（源码地址）](./README-zh_CN.md)
 
 <h2 align="center">ClientBiz当前支持的客户端 </h2>
 
-| ![mysql](./doc/icons/server/mysql.svg) | ![postgresql](./doc/icons/server/postgre.svg) | ![图片3](./doc/icons/server/mysql.svg) | ![图片4](./doc/icons/server/mysql.svg) | ![图片5](./doc/icons/server/mysql.svg) |
-|:--------------------------------------:|:---------------------------------------------:|:-------------------:|:-------------------:|:-------------------:|
-|                 mysql                  |                  postgresql                   | 图片3名称 | 图片4名称 | 图片5名称 |
-
-| ![图片1](./doc/icons/server/mysql.svg) | ![图片2](./doc/icons/server/mysql.svg) | ![图片3](./doc/icons/server/mysql.svg) | ![图片4](./doc/icons/server/mysql.svg) | ![图片5](./doc/icons/server/mysql.svg) |
-|:-------------------:|:-------------------:|:-------------------:|:-------------------:|:-------------------:|
-| 图片1名称 | 图片2名称 | 图片3名称 | 图片4名称 | 图片5名称 |
-
-
-| ![图片1](./doc/icons/server/mysql.svg) | ![图片2](./doc/icons/server/mysql.svg) | ![图片3](./doc/icons/server/mysql.svg) | ![图片4](./doc/icons/server/mysql.svg) | ![图片5](./doc/icons/server/mysql.svg) |
-|:-------------------:|:-------------------:|:-------------------:|:-------------------:|:-------------------:|
-| 图片1名称 | 图片2名称 | 图片3名称 | 图片4名称 | 图片5名称 |
+|     ![mysql](./doc/icons/server/mysql.svg)     | ![postgresql](./doc/icons/server/postgre.svg) | ![oracle](./doc/icons/server/oracle.svg) | ![mariadb](./doc/icons/server/mariadb.svg) |   ![redis](./doc/icons/server/sqlserver.svg)   | ![redis](./doc/icons/server/redis.svg) |
+|:----------------------------------------------:|:---------------------------------------------:|:----------------------------------------:|:------------------------------------------:|:----------------------------------------------:|:--------------------------------------:|
+|                     Mysql                      |                  Postgresql                   |                  Oracle                  |                  Mariadb                   |                   SqlServer                    |                 Redis                  |
+| ![zookeeper](./doc/icons/server/zookeeper.svg) |    ![kafka](./doc/icons/server/kafka.svg)     |     ![dm](./doc/icons/server/dm.svg)     |    ![tidb](./doc/icons/server/tidb.svg)    | ![oceanbase](./doc/icons/server/oceanbase.svg) |   ![db2](./doc/icons/server/db2.svg)   |
+|                   Zookeeper                    |                     Kafka                     |                    达梦                    |                    TiDB                    |                   oceanbase                    |                  DB2                   |
+|      ![etcd](./doc/icons/server/etcd.svg)      | ![TDEngine](./doc/icons/server/tdengine.svg)  | ![clickhouse](./doc/icons/server/clickhouse.svg) |   ![Presto](./doc/icons/server/presto.svg)    |  ![trino](./doc/icons/server/trino.svg)  |                                      |
+|                      Etcd                      |                   TDEngine                    |                    ClickHouse                    |                    Presto                     |                  Trino                   |                                                        |
 
 
-
-<div align="center">
-<div style="display: flex; flex-direction: row; justify-content: space-between;padding: 10px 20px">
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/mysql.svg" width="50px" height="50px">
-        <p>Mysql</p>
-    </div>
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/postgre.svg" width="50px" height="50px">
-        <p>Postgresql</p>
-    </div>
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/oracle.svg" width="50px" height="50px">
-        <p>Oracle</p>
-    </div>
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/mariadb.svg" width="50px" height="50px">
-        <p>mariadb</p>
-    </div>
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/sqlserver.svg" width="50px" height="50px">
-        <p>SqlServer</p>
-    </div>
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/redis.svg" width="50px" height="50px">
-        <p>Redis</p>
-    </div>
-</div>
-
-<div style="display: flex; flex-direction: row;justify-content: space-between;padding: 10px 20px">
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/zookeeper.svg" width="50px" height="50px">
-        <p>Zookeeper</p>
-    </div>
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/kafka.svg" width="50px" height="50px">
-        <p>Kafka</p>
-    </div>
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/dm.svg" width="50px" height="50px">
-        <p>达梦</p>
-    </div>
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/tidb.svg" width="50px" height="50px">
-        <p>TiDB</p>
-    </div>
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/oceanbase.svg" width="50px" height="50px">
-        <p>OceanBase</p>
-    </div>
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/db2.svg" width="50px" height="50px">
-        <p>DB2</p>
-    </div>
-</div>
-<div style="display: flex; justify-content: space-between; padding: 10px 20px">
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/clickhouse.svg" width="50px" height="50px">
-        <p>ClickHouse</p>
-    </div>
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/presto.svg" width="50px" height="50px">
-        <p>Presto</p>
-    </div>
-    <div style="text-align: center;">
-        <img src="./doc/icons/server/trino.svg" width="50px" height="50px">
-        <p>Trino</p>
-    </div>
-   
-</div>
-
-</div>
 
 ## 功能特点
 
@@ -110,20 +33,84 @@ ClientBiz是一款开源的，支持WEB和客户端版本的，能够支持连�
 
 ## 支持的客户端功能介绍
 
-### 数据库支持功能
+### 1.数据库支持功能
+```bash
+├── 数据库  
+│   └── 右键
+│       ├── 新建库
+│       ├── 删除库
+│       ├── 刷新
+│       └── 关闭连接              
+├── 表   
+│   ├── 右键
+│   │   ├── 新建库
+│   │   ├── 删除库
+│   │   ├── 刷新
+│   │   └── 关闭连接
+│   ├── 查询
+│   └── 编辑
 
-![mysql](./doc/icons/server/mysql.svg)
-![mysql](./doc/icons/server/postgre.svg)
-![mysql](./doc/icons/server/oracle.svg)
-![mysql](./doc/icons/server/mariadb.svg)
-![mysql](./doc/icons/server/sqlserver.svg)
-![mysql](./doc/icons/server/dm.svg)
-![mysql](./doc/icons/server/tidb.svg)
-![mysql](./doc/icons/server/oceanbase.svg)
-![mysql](./doc/icons/server/db2.svg)
-![mysql](./doc/icons/server/clickhouse.svg)
-![mysql](./doc/icons/server/presto.svg)
-![mysql](./doc/icons/server/trino.svg)
+                     
+├── 视图
+│   ├── browser
+│   └── node
+├── 函数
+├── 存储过程
+└── 触发器
+```
+
+### 2.Redis支持功能
+```bash
+├── extensions                  # 内置插件安装位置
+├── configs                     # 构建配置
+├── src
+│   ├── browser
+│   └── node
+├── tsconfig.json
+├── package.json
+└── README.md
+```
+### 3.Zookeeper支持功能
+```bash
+├── extensions                  # 内置插件安装位置
+├── configs                     # 构建配置
+├── src
+│   ├── browser
+│   └── node
+├── tsconfig.json
+├── package.json
+└── README.md
+```
+### 4.Kafka支持功能
+```bash
+├── extensions                  # 内置插件安装位置
+├── configs                     # 构建配置
+├── src
+│   ├── browser
+│   └── node
+├── tsconfig.json
+├── package.json
+└── README.md
+```
+### 5.Etcd支持功能
+```bash
+├── extensions                  # 内置插件安装位置
+├── configs                     # 构建配置
+├── src
+│   ├── browser
+│   └── node
+├── tsconfig.json
+├── package.json
+└── README.md
+```
+1. 
+2. 展示数据结构
+  - 展示所有数据库
+  - 展示表
+  - 展示视图
+  - 展示函数
+  - 展示存储过程
+  - 展示触发器
 
 
 
@@ -142,20 +129,28 @@ Open [http://127.0.0.1:8080](http://127.0.0.1:8080).
 .
 
 
-## 联系作者
-
-作者邮箱：hanbingzi@aliyun.com
-
-
-
 ## 请作者喝杯咖啡
 
 开源创作不易，请多支持
+<div style="display: flex;flex-direction: row">
+<img src="./doc/images/wechat-pay.jpg" >
+<img src="./doc/images/zifubao-pay.jpg">
+
+</div>
+
+## 商务联系
+
+作者邮箱：hanbingzi@aliyun.com
+
+加我微信
+![WeChat](./doc/images/ContactUs.jpg)
 
 
 ## 最后
 
-注：作者断断续续的全职开发此产品已花费将近两年，都穷的无米下锅，目前正在找工作，如果有Java方面的技术岗或管理岗，希望能邮箱联系作者
+注：作者已断断续续的全职开发此产品花费将近两年，都穷的无米下锅，目前正在找工作，如果有Java方面的技术岗或管理岗，希望能加我微信或者邮箱联系作者
+
+作者邮箱：hanbingzi@aliyun.com
 
 ## License
 
