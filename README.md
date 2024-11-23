@@ -10,70 +10,70 @@ ClientBiz是一款开源的，支持WEB和客户端版本的，能够支持连�
 
 <h2 align="center">ClientBiz当前支持的客户端 </h2>
 <div align="center">
-<div style="display: flex; justify-content: space-between;padding: 10px 20px">
+<div style="display: flex; flex-direction: row; justify-content: space-between;padding: 10px 20px">
     <div style="text-align: center;">
-        <img src="./doc/icons/server/mysql.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/mysql.svg" width="50px" height="50px">
         <p>Mysql</p>
     </div>
     <div style="text-align: center;">
-        <img src="./doc/icons/server/postgre.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/postgre.svg" width="50px" height="50px">
         <p>Postgresql</p>
     </div>
     <div style="text-align: center;">
-        <img src="./doc/icons/server/oracle.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/oracle.svg" width="50px" height="50px">
         <p>Oracle</p>
     </div>
     <div style="text-align: center;">
-        <img src="./doc/icons/server/mariadb.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/mariadb.svg" width="50px" height="50px">
         <p>mariadb</p>
     </div>
     <div style="text-align: center;">
-        <img src="./doc/icons/server/sqlserver.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/sqlserver.svg" width="50px" height="50px">
         <p>SqlServer</p>
     </div>
     <div style="text-align: center;">
-        <img src="./doc/icons/server/redis.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/redis.svg" width="50px" height="50px">
         <p>Redis</p>
     </div>
 </div>
 
 <div style="display: flex; justify-content: space-between;padding: 10px 20px">
     <div style="text-align: center;">
-        <img src="./doc/icons/server/zookeeper.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/zookeeper.svg" width="50px" height="50px">
         <p>Zookeeper</p>
     </div>
     <div style="text-align: center;">
-        <img src="./doc/icons/server/kafka.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/kafka.svg" width="50px" height="50px">
         <p>Kafka</p>
     </div>
     <div style="text-align: center;">
-        <img src="./doc/icons/server/dm.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/dm.svg" width="50px" height="50px">
         <p>达梦</p>
     </div>
     <div style="text-align: center;">
-        <img src="./doc/icons/server/tidb.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/tidb.svg" width="50px" height="50px">
         <p>TiDB</p>
     </div>
     <div style="text-align: center;">
-        <img src="./doc/icons/server/oceanbase.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/oceanbase.svg" width="50px" height="50px">
         <p>OceanBase</p>
     </div>
     <div style="text-align: center;">
-        <img src="./doc/icons/server/db2.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/db2.svg" width="50px" height="50px">
         <p>DB2</p>
     </div>
 </div>
 <div style="display: flex; justify-content: space-between; padding: 10px 20px">
     <div style="text-align: center;">
-        <img src="./doc/icons/server/ClickHouse.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/clickhouse.svg" width="50px" height="50px">
         <p>ClickHouse</p>
     </div>
     <div style="text-align: center;">
-        <img src="./doc/icons/server/presto.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/presto.svg" width="50px" height="50px">
         <p>Presto</p>
     </div>
     <div style="text-align: center;">
-        <img src="./doc/icons/server/Trino.svg" width="100px" height="100px">
+        <img src="./doc/icons/server/trino.svg" width="50px" height="50px">
         <p>Trino</p>
     </div>
    
@@ -123,38 +123,24 @@ $ yarn start
 ```
 
 Open [http://127.0.0.1:8080](http://127.0.0.1:8080).
-
-You can add `workspaceDir` to the URL to open the specified directory, for
-example `http://0.0.0.0:8080?workspaceDir=/path/to/dir`.
-
-## Project Structure
-
-```bash
 .
-├── extensions                  # The Buit-in extensions
-├── configs                     # Build configuration
-├── src
-│   ├── browser
-│   └── node
-├── tsconfig.json
-├── package.json
-└── README.md
-```
 
-## Use Docker
 
-```bash
-# Pull the image
-docker pull ghcr.io/opensumi/opensumi-web:latest
+## 联系作者
 
-# Run
-docker run --init --rm -d  -p 8080:8000/tcp ghcr.io/opensumi/opensumi-web:latest
-```
+作者邮箱：hanbingzi@aliyun.com
 
-Open `http://0.0.0.0:8080`
+
+
+## 请作者喝杯咖啡
+
+开源创作不易，请多支持
+
+
+## 最后
+
+注：作者全职开发此产品将近两年，已经穷的无米下锅，目前正在找工作，如果有Java方面的技术岗或管理岗，希望能邮箱联系作者
 
 ## License
-
-Copyright (c) 2019-present Alibaba Group Holding Limited, Ant Group Co. Ltd.
 
 Licensed under the [MIT](LICENSE) license.
