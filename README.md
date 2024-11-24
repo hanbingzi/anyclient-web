@@ -27,12 +27,12 @@ AnyClient是一款开源的，支持WEB和客户端版本，能够连接各种�
 
 <h2 align="center">AnyClient下一步将要支持的客户端 </h2>
 
-|                        -                         |                      -                       |                     -                      |                   -                    |                  -                  |                  -              |
-|:------------------------------------------------:|:--------------------------------------------:|:------------------------------------------:|:--------------------------------------:|:-----------------------------------:|:-------------------------------:|
-| ![elasticsearch](./doc/icons/server/elastic.svg) | ![InfluxDB](./doc/icons/server/influxdb.svg) | ![MongoDB](./doc/icons/server/mongodb.svg) | ![Emq](./doc/icons/server/mariadb.svg) | ![Emq](./doc/icons/server/emqx.svg) | ![rdjc](./doc/icons/server/rdjc.svg) |
-|                  Elasticsearch                   |                   Influxdb                   |                  MongoDB                   |                  Emq                   |                人大金仓                 |                Redis            |
-|     ![sqlite](./doc/icons/server/sqlite.svg)     |     ![Hive](./doc/icons/server/hive.svg)     |   ![Neo4j](./doc/icons/server/neo4j.svg)   |                                        |                                     |
-|                      Sqlite                      |                     Hive                     |                   Neo4j                    |                                        |                                     |                   |
+|                        -                         |                      -                       |                     -                      |                   -                    |                  -                  |                    -                     |
+|:------------------------------------------------:|:--------------------------------------------:|:------------------------------------------:|:--------------------------------------:|:-----------------------------------:|:----------------------------------------:|
+| ![elasticsearch](./doc/icons/server/elastic.svg) | ![InfluxDB](./doc/icons/server/influxdb.svg) | ![MongoDB](./doc/icons/server/mongodb.svg) |  ![Emq](./doc/icons/server/emqx.svg) | ![rdjc](./doc/icons/server/rdjc.svg) | ![sqlite](./doc/icons/server/sqlite.svg) |
+|                  Elasticsearch                   |                   Influxdb                   |                  MongoDB                   |                  Emq                   |                人大金仓                 |                  Sqlite                  |
+|     ![Hive](./doc/icons/server/hive.svg)     |   ![Neo4j](./doc/icons/server/neo4j.svg)   |                                        |                                     ||
+|                     Hive                     |                   Neo4j                    |                                        |                                     | |                                          |
 
 ## 一：功能特点
 
