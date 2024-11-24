@@ -67,12 +67,51 @@
       display: inline-block;
       height: 22px;
       width: 22px;
-      background-image: url(./mountain.png);
+      background-image: url(./images/mountain.png);
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
       border-radius: 10px;
       margin-right: 10px;
     }
+
+    .popup-content {
+      position: absolute;
+      left: auto; /* 取消左对齐 */
+      top: 100%;
+      margin-top: 2px;
+      margin-left: 10px;
+      padding: 10px;
+      border: 1px solid var(--editor-lineHighlightBorder);;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      min-width: 440px;
+      z-index: 100;
+      background: var(--sideBar-background);
+      /* 添加过渡动画 */
+      animation: fadeIn 0.3s ease-in-out;
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .pay-content {
+        background-image: url(./images/pay.jpg);
+        display: inline-block;
+        height: 300px;
+        width: 500px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+      }
+
+    }
+
   }
 }
