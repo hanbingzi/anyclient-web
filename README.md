@@ -1,8 +1,12 @@
+<p align="center">
+	<a href="https://www.clientbiz.cn"><img src="./doc/icons/clientbiz.ico" width="150" /></a>
+</p>
+
 <h1 align="center">ClientBiz Web </h1>
 
 [官网地址](https://www.clientbiz.cn)
 
-[ClientBiz IDE 版本请移步此处（源码地址）](./README-zh_CN.md)
+[ClientBiz IDE 版本请移步此处（源码地址）](https://github.com/hanbingzi/clientbiz-ide)
 
 ClientBiz是一款开源的，支持WEB和客户端版本，能够连接各种类型的关系数据库、非关系型数据库、时序数据库、图数据库、消息队列、注册中心等数据服务的管理软件。
 
