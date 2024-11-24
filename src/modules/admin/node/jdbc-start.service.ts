@@ -7,7 +7,7 @@ import { promisify } from 'util';
 import * as path from 'path';
 
 
-const jdbcDriverName = 'clientbiz-jdbc-driver.jar';
+const jdbcDriverName = 'anyclient-jdbc-driver.jar';
 
 @Injectable()
 export class JdbcStartService {
@@ -46,7 +46,7 @@ export class JdbcStartService {
   //end&kill
   public async kill() {
     // const filterCmd = platform() === 'win32' ? 'findstr' : 'grep';
-    // exec(`jps|${filterCmd} clientbiz-jdbc-driver`, (err, stdout) => {
+    // exec(`jps|${filterCmd} anyclient-jdbc-driver`, (err, stdout) => {
     //   const pid = stdout?.match(/\d+/)?.[0];
     //   if (pid) {
     //     console.log('-------------------jdbc kill-------------------->');

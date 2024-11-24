@@ -63,7 +63,7 @@ export class AdminClientService {
     });
     //{
     //     "userId": "",
-    //     "productName": "ClientBiz",
+    //     "productName": "AnyClient",
     //     "version": "1.0.1",
     //     "platform": "mac",
     //     "arch": "x86",

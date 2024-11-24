@@ -1,6 +1,6 @@
 import * as path from 'path';
 
-const MacInstallPath = '/Applications/ClientBiz.app/Contents';
+const MacInstallPath = '/Applications/AnyClient.app/Contents';
 
 export class AppUtil {
   public static getExecRootPath() {

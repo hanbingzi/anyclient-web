@@ -19,8 +19,8 @@ import { anyclient_base64 } from '../../icons/main';
 //   id: 'opensumi-builtin-services-sample',
 // };
 
-const COMPONENTS_ID = 'clientbiz-welcome-id';
-const COMPONENTS_SCHEME_ID = 'clientbiz-welcome-id';
+const COMPONENTS_ID = 'anyclient-welcome-id';
+const COMPONENTS_SCHEME_ID = 'anyclient-welcome-id';
 
 @Domain(BrowserEditorContribution, ClientAppContribution)
 export class WelcomeContribution implements ClientAppContribution, BrowserEditorContribution {

@@ -42,7 +42,7 @@ export const Portrait = () => {
         />
       </div>
       <div className={cls(styles['toolbar-icon'])}>
-        <a href={'https://github.com/hanbingzi/clientbiz-ide'} target={'_blank'}>
+        <a href={'https://github.com/hanbingzi/anyclient-ide'} target={'_blank'}>
           <Icon
             icon={'github-fill'}
           />

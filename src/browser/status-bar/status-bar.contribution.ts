@@ -65,10 +65,10 @@ export class StatusBarContribution extends WithEventBus implements ClientAppCont
 
   onDidStart() {
     if (!this.statusBarElement) {
-      this.statusBarElement = this.statusBarService.addElement('ClientBiz', {
+      this.statusBarElement = this.statusBarService.addElement('AnyClient', {
         backgroundColor: 'var(--button-background)',
         color: 'var(--foreground)',
-        tooltip: 'ClientBiz',
+        tooltip: 'AnyClient',
         alignment: StatusBarAlignment.LEFT,
         iconClass: this.iconService.fromIcon(undefined, STATUS_BAR_ICON, IconType.Mask),
         priority: Infinity,

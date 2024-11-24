@@ -56,12 +56,12 @@ renderApp({
   useCdnIcon: false,
   useExperimentalShadowDom: false,
   defaultPreferences: {
-    'general.theme': 'clientbiz-dark',//'opensumi-dark',//
+    'general.theme': 'anyclient-dark',//'opensumi-dark',//
     'general.icon': 'vscode-icons',
   },
   defaultPanels: {
     'bottom': '@opensumi/ide-terminal-next',
     'right': '',
   },
-  appName: 'ClientBiz'
+  appName: 'AnyClient'
 });
