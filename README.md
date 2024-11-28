@@ -8,6 +8,12 @@
 
 [AnyClient IDE 版本请移步此处（源码地址）](https://github.com/hanbingzi/anyclient-ide)
 
+![github](./doc/icons/main/github.svg)
+[GitHub主页地址](https://github.com/hanbingzi)
+
+![gitee](./doc/icons/main/gitee.svg)
+[Gitee主页地址](https://gitee.com/hanbingzi)
+
 AnyClient是一款开源的，支持WEB和客户端版本，能够连接各种类型的关系数据库、非关系型数据库、时序数据库、图数据库、消息队列、注册中心等数据服务的管理软件。
 
 ![perview](./doc/images/anyclient-main.jpg)
@@ -44,7 +50,16 @@ AnyClient是一款开源的，支持WEB和客户端版本，能够连接各种�
 - 优秀的智能脚本语言提示
 - 可视化操作的SQL查询结果展示
 
-## 二：支持的客户端功能介绍
+## 二：AnyClient功能截图
+
+### 安装包、WEB、Docker方式安装使用
+![](./doc/images/anyclient-ide-web.jpg)
+### 多种主题切换
+![](./doc/images/multi-theme.jpg)
+### 使用GIT管理脚本
+![](./doc/images/anyclient-ide-git.jpg)
+
+## 三：AnyClient客户端功能
 
 ### 1.数据库支持功能
 包括：Mysql，Oracle，Postgresql，Mariadb，SqlServer，达梦，TiDB，OceanBase，DB2，ClickHouse，Presto，Trino，TDEngine
