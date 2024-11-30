@@ -223,6 +223,8 @@ export function DataEditor({
       const regex = /^-?\d+(\.\d+)?$/;
       if (regex.test(value)) {
         setCurrentValue(value);
+      }else if(isEmpty(value)){
+        setCurrentValue(value);
       }
     } else {
       setCurrentValue(value);

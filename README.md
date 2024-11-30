@@ -1,10 +1,22 @@
+
+|                           微信群                           |                           公众号                            |
+|:-----------------------------------------------------:|:------------------------------------------------------:|
+| <img src="./doc/icons/weixinqun.jpg" width="200px"/>  | <img src="./doc/icons/weixingzh.jpg" width="200px" />  |
+
+<div align="center">
+
+加群前请一定要Star ，跪谢，关注微信公众号可以获取 AnyClient 最新动态和更新。
+</div>
+
 <p align="center">
 	<a href="https://www.clientbiz.cn"><img src="./doc/icons/anyclient.ico" width="150" /></a>
 </p>
 
 <h1 align="center">AnyClient Web </h1>
 
-[官网地址](https://www.anyclient.cn)
+
+
+[官网地址](https://www.clientbiz.cn)
 
 [AnyClient IDE 版本请移步此处（源码地址）](https://github.com/hanbingzi/anyclient-ide)
 
