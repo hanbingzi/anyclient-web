@@ -178,6 +178,7 @@ export class QuerySqlExplorerService {
     if (!initResult) {
       return;
     }
+    this.showPreview();
     this.updateServerClass('sql');
     this.updateServerType(this.serverType);
     this.onLoadingChangeEmitter.fire(true);
@@ -190,7 +191,7 @@ export class QuerySqlExplorerService {
     }
 
     console.log('runSql response------->', runResponseList);
-    this.showPreview();
+
     this.updateRunResult(runResponseList);
     this.onLoadingChangeEmitter.fire(false);
   }
@@ -200,6 +201,7 @@ export class QuerySqlExplorerService {
     if (!initResult) {
       return;
     }
+    this.showPreview();
     this.onLoadingChangeEmitter.fire(true);
     this.updateServerClass('redis');
     let runResponseList: IRunSqlResult[] = [];
@@ -210,7 +212,7 @@ export class QuerySqlExplorerService {
       runResponseList.push(runResponse);
     }
     console.log('runCommand response------->', runResponseList);
-    this.showPreview();
+
     this.updateRunResult(runResponseList);
     this.onLoadingChangeEmitter.fire(false);
   }
@@ -221,7 +223,7 @@ export class QuerySqlExplorerService {
     if (!initResult) {
       return;
     }
-    console.log('this.connect:', this.connect);
+    this.showPreview();
     this.onLoadingChangeEmitter.fire(true);
     this.updateServerClass('es');
     let runResponseList: IRunSqlResult[] = [];
@@ -231,8 +233,7 @@ export class QuerySqlExplorerService {
       const runResponse = await this.esService.run(this.connect, command);
       runResponseList.push(runResponse);
     }
-    console.log('runCommand response------->', runResponseList);
-    this.showPreview();
+
     this.updateRunResult(runResponseList);
     this.onLoadingChangeEmitter.fire(false);
   }

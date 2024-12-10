@@ -15,6 +15,7 @@ import { ConfigProvider } from 'antd';
 import '@opensumi/antd-theme/lib/index.css';
 import { ProgressBar } from '@opensumi/ide-core-browser/lib/components/progressbar';
 import { EsResultView } from './es-result/es-result.view';
+import TimerComponent from './timer-view';
 
 export const DEFAULT_TITLE_HEIGHT = 41;
 export const DEFAULT_TITLE_ITEM_WIDTH = 50 + 24;
@@ -240,7 +241,11 @@ export const QueryExplorerView = ({ viewState }: PropsWithChildren<{ viewState: 
     }, [width, responseHeight, selectedIndex, serverClass, sqlRunResult, queryResult, querySqlExplorerService]);
 
   if (isLoading) {
-    return <ProgressBar loading />;
+    return (<>
+        <ProgressBar loading />
+        <TimerComponent />
+      </>
+    );
   }
   if (sqlRunResult && sqlRunResult.length > 0) {
     return (
