@@ -26,6 +26,8 @@ import { EtcdKeyView } from './etcd-view/etcd-key-view.view';
 import { EtcdUserView } from './etcd-view/users/etcd-user.view';
 import { EtcdRoleView } from './etcd-view/roles/etcd-role.view';
 import { EtcdClusterView } from './etcd-view/cluster/etcd-cluster.view';
+import { EsIndexDataAddView } from './es-view/es-index-data-add.view';
+import { EsIndexView } from './es-view/es-index-view.view';
 import SqlModeServer = ServerClassNamespace.SqlModeServer;
 
 export const DataBrowserView: ReactEditorComponent<OpenViewParam> = ({ resource }) => {
@@ -99,6 +101,14 @@ export const DataBrowserView: ReactEditorComponent<OpenViewParam> = ({ resource 
         nodeType === 'redisZSet'
       )
         return <RedisKeyView {...baseProps} />;
+    } else if (serverType === 'Elasticsearch') {
+      if (nodeType === 'index')
+        if (option === 'open') {
+          return <EsIndexView {...baseProps} />;
+        }
+      // else if (option === 'create') {
+      //     return <EsIndexDataAddView {...baseProps} />;
+      //   }
     } else if (serverType === 'Zookeeper') {
       if (nodeType === 'zkNode') return <ZookeeperView {...baseProps} fullPath={nodeValue as string} />;
     } else if (serverType === 'Kafka') {
@@ -139,7 +149,7 @@ export const DataBrowserView: ReactEditorComponent<OpenViewParam> = ({ resource 
         }}
       >
         <div className={styles['data-browser-container']} ref={ref}>
-          <ConfigProvider prefixCls='sumi_antd' getPopupContainer={() => ref.current}>
+          <ConfigProvider prefixCls="sumi_antd" getPopupContainer={() => ref.current}>
             {renderContent()}
           </ConfigProvider>
         </div>

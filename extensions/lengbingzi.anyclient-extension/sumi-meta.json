@@ -1,9 +1,0 @@
-{
-  "web-assets": [
-    "package.json",
-    "syntaxes/mysql.tmLanguage.json",
-    "syntaxes/es.tmLanguage.json",
-    "syntaxes/redis.tmLanguage.json",
-    "out/browser/index.js"
-  ]
-}

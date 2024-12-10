@@ -16,6 +16,7 @@ import { IDbSelectServiceToken } from '../../toolbar-option/common';
 import { DbSelectService } from '../../toolbar-option/browser/db-select.service';
 import { URI } from '@opensumi/ide-core-browser';
 import { IWorkspaceService } from '@opensumi/ide-workspace';
+import { IEsService, IEsServiceToken } from '../../server-client/common/types/es.types';
 import SqlModeServer = ServerClassNamespace.SqlModeServer;
 
 export class DatabaseCache {
@@ -47,6 +48,9 @@ export class DbCacheNodeService {
 
   @Autowired(IRedisServiceToken)
   private redisService: IRedisService;
+
+  @Autowired(IEsServiceToken)
+  private esService: IEsService;
 
   @Autowired(ISqlServerApiToken)
   private sqlServerApiService: SqlServerApiService;
@@ -100,7 +104,7 @@ export class DbCacheNodeService {
 
   public async getServerCacheDb(serverNode: ServerNode): Promise<DbNode[]> {
     const { serverInfo: server, children } = serverNode;
-    console.log('是否缓存了--》', children)
+    console.log('是否缓存了--》', children);
     //先从缓存中读取
     if (children && children.size > 0) {
       return serverNode.getChildrenFlat() as DbNode[];
@@ -120,6 +124,11 @@ export class DbCacheNodeService {
         databaseNodes = cacheDatabases.map(
           (item) => new DbNode(item.name, item.db + '', item.name, serverType, 'redisDb'),
         );
+      }
+    } else if (serverType === 'Elasticsearch') {
+      let indexList = await this.esService.showIndexList({ server });
+      if (indexList.success) {
+        databaseNodes = indexList.data.map((item) => new DbNode(item.index, item.index, item.index, serverType, 'index'));
       }
     }
     if (databaseNodes && databaseNodes.length > 0) {
@@ -157,7 +166,7 @@ export class DbCacheNodeService {
   public async clearCache(clearParam?: IClearParam) {
     const selectedServer = this.dbSelectService.selectedServerNode;
     const selectedDb = this.dbSelectService.selectedDbNode;
-    console.log('clearCache:', clearParam, selectedServer, selectedDb)
+    console.log('clearCache:', clearParam, selectedServer, selectedDb);
     //刷新所有服务
     if (!clearParam) {
       DatabaseCache.workspaceCache.clear();
@@ -205,11 +214,13 @@ export class DbCacheNodeService {
       dbNodes = await this.getServerCacheDb(selectedServerNode);
     } else {
       //将所有缓存的库返回
-      if (DatabaseCache.workspaceCache.has('sql')) {
-        const serverNodes = DatabaseCache.workspaceCache.get('sql')!;
-        for (let serverNode of serverNodes) {
-          if (serverNode.children) {
-            dbNodes.concat(serverNode.getChildrenFlat());
+      if (this.dbSelectService.suffix === 'sql') {
+        if (DatabaseCache.workspaceCache.has('sql')) {
+          const serverNodes = DatabaseCache.workspaceCache.get('sql')!;
+          for (let serverNode of serverNodes) {
+            if (serverNode.children) {
+              dbNodes.concat(serverNode.getChildrenFlat());
+            }
           }
         }
       }

@@ -81,7 +81,7 @@ export const SummaryView = ({ isShow, width, height, serverClass, responses }: S
     //console.log('width:', width)
     let sqlColumn: IListColumn = { title: 'SQL', columnKey: 'sql', width: 300 };
     let messageColumn: IListColumn = { title: 'Message', columnKey: 'message', width: 120 };
-    if (serverClass === 'redis') {
+    if (serverClass === 'redis' || serverClass==='es') {
       sqlColumn.title = 'Command';
       sqlColumn.columnKey = 'command';
     }

@@ -1,7 +1,0 @@
-// 这是一个注释
-get "string";
-
-GET "aaaaaa" 1;
-
-SET A ['a','b'];
--- as

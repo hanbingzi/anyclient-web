@@ -71,7 +71,7 @@ function unzipFile(dist, targetDirName, tmpZipFile) {
 const installExtension = async () => {
 
   // 解压插件，使用 opentrs 插件时解压缩容易出错，因此这里加一个重试逻辑
-  await retry(() => unzipFile(targetDir, extensionName, '/Users/yanqi/devData/myDevGitHub/level5/any-client-extension/lengbingzi-any-client-extension-1.0.2.zip'), {retries: 5});
+  await retry(() => unzipFile(targetDir, extensionName, '/Users/yanqi/devData/myDevGitHub/level5/any-client-extension/lengbingzi-any-client-extension-1.0.3.zip'), {retries: 5});
 
   // rimraf.sync(tmpZipFile);
   //}

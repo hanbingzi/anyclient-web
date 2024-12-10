@@ -39,6 +39,7 @@ export class DbSelectService {
   private readonly onSelectedDbNodeChangeEmitter = new Emitter<DbNode | null>();
   private readonly onSelectedSchemaNodeChangeEmitter = new Emitter<DbNode | null>();
 
+  private _suffix:FileSuffixType;
   private _serverNodes: ServerNode[] = [];
   private _dbNodes: DbNode[] = [];
 
@@ -98,6 +99,9 @@ export class DbSelectService {
 
   get selectedSchemaNode() {
     return this._selectedSchemaNode;
+  }
+  get suffix(){
+    return this._suffix;
   }
 
   setListener() {
@@ -177,6 +181,7 @@ export class DbSelectService {
     if (!FileSuffixArray.includes(activeExtname)) {
       return;
     }
+    this._suffix = activeExtname  as FileSuffixType;
     await this.setCurrentFileSuffix(activeExtname as FileSuffixType);
     // 用户之前对此文件是否有选择的库，如果有，加载之前的，没有，按当前文件目录加载服务和库
     if (

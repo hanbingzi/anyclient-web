@@ -1,7 +1,7 @@
 import { Injectable } from '@opensumi/di';
 import { IQueryResult } from '../common';
 import { AbstractDefaultClient } from './base-client';
-import { IDMServiceClient } from '../common/types/dm.types';
+import { IDMServiceClient } from '../common';
 
 @Injectable()
 export class DMServiceClient extends AbstractDefaultClient implements IDMServiceClient {
