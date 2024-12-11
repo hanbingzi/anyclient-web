@@ -26,6 +26,8 @@ export interface IEsService {
 
   run(connectQuery: ConnectQuery, command: string[]): Promise<IRunSqlResult>;
 
+  clusterHealth(connectQuery: ConnectQuery): Promise<IQueryResult>;
+
   showIndexList(connectQuery: ConnectQuery): Promise<IQueryResult>;
 
   getIndexDataByPage(connectQuery: ConnectQuery, index: string,wheres:IWhereParam[], page: IPage): Promise<IEsPageDataResult>;

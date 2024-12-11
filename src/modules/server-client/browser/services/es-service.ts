@@ -35,6 +35,10 @@ export class EsService implements IEsService {
     };
   }
 
+  clusterHealth(connectQuery: ConnectQuery){
+    const command = this.dialect.getHealth();
+    return this.esClientService.runCommand(connectQuery, command);
+  }
   showIndexList(connectQuery: ConnectQuery) {
     const command = this.dialect.indices();
     return this.esClientService.runCommand(connectQuery, command);

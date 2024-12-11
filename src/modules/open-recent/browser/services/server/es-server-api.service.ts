@@ -54,16 +54,6 @@ export class EsServerApiService {
 
   showEsModelItem(): IServerTreeNode[] {
     const treeNodes: IServerTreeNode[] = [
-
-      {
-        displayName: 'Index',
-        nodeName: 'Index',
-        serverType: 'Elasticsearch',
-        levelType: 'node',
-        nodeStat: 'success',
-        nodeType: 'indexs',
-        sort: 9,
-      },
       {
         displayName: 'Cluster',
         nodeName: 'Cluster',
@@ -71,8 +61,18 @@ export class EsServerApiService {
         levelType: 'entity',
         nodeStat: 'success',
         nodeType: 'cluster',
-        sort: 8,
+        sort: 9,
       },
+      {
+        displayName: 'Index',
+        nodeName: 'Index',
+        serverType: 'Elasticsearch',
+        levelType: 'node',
+        nodeStat: 'success',
+        nodeType: 'indexs',
+        sort: 7,
+      },
+
     ];
     return treeNodes;
   }
