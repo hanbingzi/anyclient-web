@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Alert, Badge, Card, Col, Progress, Row, Spin, Tooltip } from 'antd';
 import { CheckCircleOutlined, ClockCircleOutlined, WarningOutlined } from '@ant-design/icons';
-import styles from './es-cluster-health.less';
+import styles from './es-cluster-health.module.less';
 import { useInjectable } from '@opensumi/ide-core-browser';
 import { IEsService } from '../../../server-client/common/types/es.types';
 import { IBaseState } from '../../common/data-browser.types';

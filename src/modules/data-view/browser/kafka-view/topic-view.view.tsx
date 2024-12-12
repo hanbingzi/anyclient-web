@@ -3,7 +3,7 @@ import { Icon, Select, Tabs } from '@opensumi/ide-components';
 import { TabsTitleItem } from '../../../components/title';
 import { IListColumn, TableView } from '../../../components/table-view';
 import { IBaseState, ViewState } from '../../common/data-browser.types';
-import styles from './topic.module.less';
+import styles from './index.module.less';
 import cls from 'classnames';
 import { DisposableCollection } from '@opensumi/ide-utils';
 import { useInjectable } from '@opensumi/ide-core-browser';
@@ -12,7 +12,7 @@ import { LabelItem } from '../../../components/form';
 import { ISortColumn } from '../../../components/table-editor';
 import { IconSvg } from '../../../icons';
 import { Run, Stop } from '../../../icons/tools';
-import { IMessage, IPartition, IQueryStart } from '../../../server-client/common/types/kafka.types';
+import { IMessage, IPartition, IQueryStart } from '../../../server-client/common';
 
 // const testData = [
 //   {partition: 0, offset: 1, key: 'test', value: 'one-1', timestamp: '2002-12-12 10:22:36'},

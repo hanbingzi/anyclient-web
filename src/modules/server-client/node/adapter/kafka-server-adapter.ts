@@ -18,7 +18,7 @@ export class KafkaServerAdapter extends DefaultServerAdapter {
     const { host, port, clientId, groupId, connectionType,connectTimeout } = server;
     const useClientId = clientId ? clientId : `${AppConstants.AppName}-${uuid(10)}`;
     const brokers: string[] = [];
-    console.log(`host:${host};port:${port}`);
+    //console.log(`host:${host};port:${port}`);
     //前端验证，保证cluster是，cluster必须有数据，
     if (connectionType === 'Cluster') {
       if (!cluster) {

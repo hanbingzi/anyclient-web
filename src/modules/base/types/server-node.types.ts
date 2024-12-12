@@ -141,7 +141,9 @@ export type CommonAuth = 'auth' | 'users' | 'user' | 'roles' | 'role' | 'permiss
 
 export type CommonKey = 'data' | 'dic' | 'key' | 'node' | '';
 
-export type CommonDoc = 'indexs'|'index'
+export type CommonDoc = 'indexs' | 'index'
+
+export type ExtraNode = 'status'
 
 export type AllNodeType =
   | 'server'
@@ -155,7 +157,8 @@ export type AllNodeType =
   | CommonTopic
   | CommonAuth
   | CommonKey
-  | CommonDoc;
+  | CommonDoc
+  | ExtraNode;
 
 
 //export type AllNodeType = ServerType | SqlNodeType | CacheNodeType
@@ -173,4 +176,5 @@ export type SubNodeType =
   | CommonTopic
   | CommonAuth
   | CommonKey
-  | CommonDoc;
+  | CommonDoc
+  | ExtraNode;

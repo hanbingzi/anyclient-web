@@ -3,7 +3,7 @@ import { Button } from '@opensumi/ide-components';
 import { LabelInput } from '../../../components/form';
 import { IQueryResult, TopicCreateParam } from '../../../server-client/common';
 import { AlertView } from '../../../components/alert/alert.view';
-import styles from './topic.module.less';
+import styles from './index.module.less';
 import { useInjectable } from '@opensumi/ide-core-browser';
 import { TopicViewService } from './topic-view.service';
 import { WindowsTitle } from '../../../components/title';

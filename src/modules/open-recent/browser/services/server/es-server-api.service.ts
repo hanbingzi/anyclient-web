@@ -58,10 +58,11 @@ export class EsServerApiService {
         displayName: 'Cluster',
         nodeName: 'Cluster',
         serverType: 'Elasticsearch',
-        levelType: 'entity',
+        levelType: 'node',
         nodeStat: 'success',
         nodeType: 'cluster',
         sort: 9,
+        clickLoadData:true
       },
       {
         displayName: 'Index',

@@ -30,6 +30,7 @@ import { EtcdClusterView } from './etcd-view/cluster/etcd-cluster.view';
 import { EsIndexView } from './es-view/es-index-view.view';
 import { EsClusterHealth } from './es-view/es-cluster-health';
 import SqlModeServer = ServerClassNamespace.SqlModeServer;
+import { KafkaStatus } from './kafka-view/kafka-status.view';
 
 export const DataBrowserView: ReactEditorComponent<OpenViewParam> = ({ resource }) => {
   const { nodeName, nodeValue, db, schema, serverId, serverType, nodeType, option, path, extra, server, breadCrumb } =
@@ -121,6 +122,8 @@ export const DataBrowserView: ReactEditorComponent<OpenViewParam> = ({ resource 
         return <TopicView {...baseProps} />;
       } else if (nodeType === 'topic' && option === 'addChild') {
         return <TopicAddMessageView {...baseProps} />;
+      } else if(nodeType==='status'){
+        return <KafkaStatus {...baseProps}/>
       }
     } else if (serverType === 'Etcd') {
       if (option === 'open') {
