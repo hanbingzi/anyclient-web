@@ -5,7 +5,8 @@
 
 <div align="center">
 
-加群前请一定要Star ，跪谢，关注微信公众号可以获取 AnyClient 最新动态和更新。
+加群前请一定要Star，有什么疑问，可以加群沟通。关注公众号，获取AnyClient最新动态。<br/>
+（加群前请一定要Star！！！ ）
 </div>
 
 <p align="center">
@@ -75,6 +76,8 @@ AnyClient是一款开源的，支持WEB和客户端版本，能够连接各种�
 
 ### 1.数据库支持功能
 包括：Mysql，Oracle，Postgresql，Mariadb，SqlServer，达梦，TiDB，OceanBase，DB2，ClickHouse，Presto，Trino，TDEngine
+
+注意：oracle mac版本只支持12C以上版本，windows只支持11g以上版本
 ```bash
 ├── 数据库  
 │   └── 右键
