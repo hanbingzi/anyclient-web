@@ -1,7 +1,9 @@
 node_modules/
 lib/
 dist-node/
-hosted/
+# hosted无法生成-需要解决
+#hosted/
+hosted1/
 # extension下面也有dist，所有不能忽略所有的
 /dist/
 *.error.log
