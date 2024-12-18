@@ -30,7 +30,7 @@ module.exports = {
           minify: true,
           treeShaking: true,
           keepNames: true,
-          target: 'es2020',
+          target: 'es2016',
         },
       }),
     ],
@@ -54,7 +54,7 @@ module.exports = {
             options: {
               implementation: esbuild,
               loader: 'tsx',
-              target: ['es2020', 'chrome91', 'node14.16'],
+              target: ['es2016'],
               tsconfigRaw: resolveTSConfig(path.join(__dirname, '../tsconfig.json')),
             },
           },
@@ -65,8 +65,8 @@ module.exports = {
     ],
   },
   externals: [
-    function (context, request, callback) {
-      if (['node-pty', 'oniguruma', '@parcel/watcher', 'nsfw', 'spdlog', 'efsw', 'getmac','etcd3','dmdb'].indexOf(request) !== -1) {
+    function(context, request, callback) {
+      if (['node-pty', 'oniguruma', '@parcel/watcher', 'nsfw', 'spdlog', 'efsw', 'getmac', 'etcd3', 'dmdb'].indexOf(request) !== -1) {
         return callback(null, `commonjs ${request}`);
       }
       callback();

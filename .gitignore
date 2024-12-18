@@ -1,8 +1,9 @@
 node_modules/
 lib/
-dist/
 dist-node/
 hosted/
+# extension下面也有dist，所有不能忽略所有的
+/dist/
 *.error.log
 yarn.log
 workspace/
