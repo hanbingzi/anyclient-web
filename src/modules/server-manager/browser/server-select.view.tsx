@@ -133,7 +133,7 @@ const ServerSelectView = observer(() => {
             serverEditService.next();
           }}
         >
-          {localize('botton.next')}
+          下一步
         </Button>
       </div>
     </div>

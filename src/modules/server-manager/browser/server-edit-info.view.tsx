@@ -7,7 +7,6 @@ import { ServerCluster } from '../../local-store-db/common';
 import styles from './server.module.less';
 import React from 'react';
 import { ServerInputFormProps } from './server-edit.view';
-import { localize } from '@opensumi/ide-core-common';
 
 export const CommonServerInfoForm = (props: ServerInputFormProps) => {
   return (
@@ -50,7 +49,7 @@ export const AddressInputForm = (props: ServerInputFormProps) => {
   return (
     <>
       <LabelInput
-        label={localize('form.general.server_address')}
+        label={'地址'}
         required={true}
         message={'地址不能为空'}
         value={form.host}
@@ -61,7 +60,7 @@ export const AddressInputForm = (props: ServerInputFormProps) => {
         }}
       />
       <LabelInput
-        label={localize('form.general.server_port')}
+        label={'端口'}
         type={'number'}
         value={String(form.port)}
         required={true}
@@ -147,7 +146,7 @@ export const UserInputForm = (props: ServerInputFormProps) => {
     <>
       {enableUser ? (
         <LabelInput
-          label={localize('form.general.username')}
+          label={'用户名'}
           value={form.user}
           style={{ marginTop: '12px' }}
           onValueChange={(value) => {
@@ -158,7 +157,7 @@ export const UserInputForm = (props: ServerInputFormProps) => {
       {enablePassword ? (
         <>
           <LabelInput
-            label={localize('form.general.password')}
+            label={'密码'}
             value={form.password}
             type={'password'}
             style={{ marginTop: '12px' }}
@@ -166,7 +165,7 @@ export const UserInputForm = (props: ServerInputFormProps) => {
               handleChangeForm('password', value);
             }}
           />
-          <LabelItem label={localize('form.general.password_remember')} style={{ marginTop: '12px' }}>
+          <LabelItem label={'记住密码'} style={{ marginTop: '12px' }}>
             <Checkbox
               onChange={(value) => {
                 handleChangeForm('rememberMe', value.target.checked);
