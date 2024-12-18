@@ -24,6 +24,7 @@ import {
   RedisServerForm,
 } from './server-edit-info.view';
 import { isEmpty } from '../../base/utils/object-util';
+import { localize } from '@opensumi/ide-core-common';
 
 export interface ServerEditProps {
   selectedServer: ServerType;
@@ -403,7 +404,7 @@ const ServerEditView = observer(() => {
         )}
       >
         <LabelInput
-          label={'连接名'}
+          label={localize('form.general.server_name')}
           value={form.serverName}
           required={true}
           message={'连接名不能为空'}
@@ -413,7 +414,7 @@ const ServerEditView = observer(() => {
           }}
         />
         {serverSetting?.versions ? (
-          <LabelItem label={'version'}
+          <LabelItem label={localize('form.general.server_version')}
                      style={{ marginTop: '12px' }}
                      required={serverSetting.versionForce}
           >
@@ -438,7 +439,7 @@ const ServerEditView = observer(() => {
         <span className={styles['server-edit-title-content']}>{selectedServer}</span>
       </div>
       <Tabs
-        tabs={['主要', '配置']} //'SSH'
+        tabs={['常规','配置']} //'SSH'
         value={activeTabId}
         onChange={(index) => {
           console.log('--->', index);
@@ -461,7 +462,7 @@ const ServerEditView = observer(() => {
       <div className={styles['edit-option-container']}>
         <div>
           <Button size="large" onClick={handleTestConnect} loading={isLoading} type={'secondary'}>
-            测试连接
+            {localize('botton.connection_test')}
           </Button>
         </div>
         {/*type='secondary'*/}
@@ -474,13 +475,13 @@ const ServerEditView = observer(() => {
                 serverEditService.last();
               }}
             >
-              上一步
+              {localize('botton.back')}
             </Button>
           )}
           &nbsp;
           {pageState === 'input' ? (
             <Button size="large" type={'primary'} onClick={handleSubmit}>
-              保存
+              {localize('botton.save')}
             </Button>
           ) : (
             <Button size="large" type={'primary'} onClick={handleSubmit}>
@@ -543,7 +544,7 @@ export const ServerEditSetting = (props: ServerEditProps) => {
 
 
       <LabelInput
-        label={'连接超时时间(毫秒)'}
+        label={localize('form.config.connection_timeout')}
         value={String(form.connectTimeout)}
         type={'number'}
         style={{ marginTop: '12px' }}
@@ -552,7 +553,7 @@ export const ServerEditSetting = (props: ServerEditProps) => {
         }}
       />
       <LabelInput
-        label={'请求超时时间(毫秒)'}
+        label={localize('form.config.request_timeout')}
         value={String(form.requestTimeout)}
         type={'number'}
         style={{ marginTop: '12px' }}
@@ -562,7 +563,7 @@ export const ServerEditSetting = (props: ServerEditProps) => {
       />
       {enableTimezone ? (
         <LabelInput
-          label={'时区'}
+          label={localize('form.config.timeZone')}
           value={form.timezone}
           style={{ marginTop: '12px' }}
           onValueChange={(value) => {
@@ -572,7 +573,7 @@ export const ServerEditSetting = (props: ServerEditProps) => {
       ) : null}
       {enableMaximumPoolSize ? (
         <LabelInput
-          label={'最大连接数'}
+          label={localize('form.config.max_connections')}
           value={String(form.maximumPoolSize)}
           type={'number'}
           style={{ marginTop: '12px' }}
@@ -583,7 +584,7 @@ export const ServerEditSetting = (props: ServerEditProps) => {
       ) : null}
       {enableMininumIdle ? (
         <LabelInput
-          label={'最小空闲连接数'}
+          label={localize('form.config.minimum_idleConnections')}
           value={String(form.minimumIdle)}
           type={'number'}
           style={{ marginTop: '12px' }}
@@ -594,7 +595,7 @@ export const ServerEditSetting = (props: ServerEditProps) => {
       ) : null}
       {enableIdleTimeout ? (
         <LabelInput
-          label={'空闲连接超时时间(毫秒)'}
+          label={localize('form.config.idleTime')}
           value={String(form.idleTimeout)}
           type={'number'}
           style={{ marginTop: '12px' }}
@@ -606,7 +607,7 @@ export const ServerEditSetting = (props: ServerEditProps) => {
 
       {enableMaxLifeTime ? (
         <LabelInput
-          label={'连接最大生命周期(毫秒)'}
+          label={localize('form.config.max_liftTime')}
           value={String(form.maxLifeTime)}
           type={'number'}
           style={{ marginTop: '12px' }}
