@@ -8,5 +8,8 @@ export const layoutConfig = {
       modules: ['menu-bar-container', 'toolbar'],
       // modules: ['@opensumi/ide-menu-bar', 'toolbar'],
     },
+    [SlotLocation.bottom]: {
+      modules: [ '@opensumi/ide-output', 'debug-console', '@opensumi/ide-markers'],
+    },
   },
 };
